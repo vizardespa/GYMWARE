@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f012080f68e48ffb0b8a01ee22a5792" Name="Diagrama1">
+        <EntityTypeShape EntityType="GimnasioModel.Cliente" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Curso" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Entrenador" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Gimnasio" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Horario" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Inventario" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Material" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Membresia" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.RelEntrenadorCurso" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.RelMembresiaCliente" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.RelMembresiaCurso" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GimnasioModel.Usuario" Width="1.5" PointX="8.25" PointY="11.125" IsExpanded="true" />
+        <AssociationConnector Association="GimnasioModel.FK_Cliente_Gimnasio" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_RelMembresiaCliente_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Curso_Gimnasio" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Horario_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_RelEntrenadorCurso_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_RelMembresiaCurso_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Entrenador_Gimnasio" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_RelEntrenadorCurso_Entrenador" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Usuario_Entrenador" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Inventario_Gimnasio" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Membresia_Gimnasio" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Usuario_Gimnasio" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Horario_Membresia" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_Inventario_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_RelMembresiaCliente_Membresia" ManuallyRouted="false" />
+        <AssociationConnector Association="GimnasioModel.FK_RelMembresiaCurso_Membresia" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GimnasioModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="GimnasioModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="GimnasioModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Curso" EntityType="GimnasioModel.Store.Curso" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Entrenador" EntityType="GimnasioModel.Store.Entrenador" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Gimnasio" EntityType="GimnasioModel.Store.Gimnasio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Horario" EntityType="GimnasioModel.Store.Horario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Inventario" EntityType="GimnasioModel.Store.Inventario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Material" EntityType="GimnasioModel.Store.Material" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Membresia" EntityType="GimnasioModel.Store.Membresia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelEntrenadorCurso" EntityType="GimnasioModel.Store.RelEntrenadorCurso" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelMembresiaCliente" EntityType="GimnasioModel.Store.RelMembresiaCliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelMembresiaCurso" EntityType="GimnasioModel.Store.RelMembresiaCurso" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="GimnasioModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="GimnasioModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Cliente_Gimnasio" Association="GimnasioModel.Store.FK_Cliente_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curso_Gimnasio" Association="GimnasioModel.Store.FK_Curso_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Entrenador_Gimnasio" Association="GimnasioModel.Store.FK_Entrenador_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Entrenador" EntitySet="Entrenador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_Curso" Association="GimnasioModel.Store.FK_Horario_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Horario" EntitySet="Horario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_Membresia" Association="GimnasioModel.Store.FK_Horario_Membresia">
+            <End Role="Membresia" EntitySet="Membresia" />
+            <End Role="Horario" EntitySet="Horario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventario_Gimnasio" Association="GimnasioModel.Store.FK_Inventario_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventario_Material" Association="GimnasioModel.Store.FK_Inventario_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membresia_Gimnasio" Association="GimnasioModel.Store.FK_Membresia_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Membresia" EntitySet="Membresia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelEntrenadorCurso_Curso" Association="GimnasioModel.Store.FK_RelEntrenadorCurso_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="RelEntrenadorCurso" EntitySet="RelEntrenadorCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelEntrenadorCurso_Entrenador" Association="GimnasioModel.Store.FK_RelEntrenadorCurso_Entrenador">
+            <End Role="Entrenador" EntitySet="Entrenador" />
+            <End Role="RelEntrenadorCurso" EntitySet="RelEntrenadorCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCliente_Cliente" Association="GimnasioModel.Store.FK_RelMembresiaCliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="RelMembresiaCliente" EntitySet="RelMembresiaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCliente_Membresia" Association="GimnasioModel.Store.FK_RelMembresiaCliente_Membresia">
+            <End Role="Membresia" EntitySet="Membresia" />
+            <End Role="RelMembresiaCliente" EntitySet="RelMembresiaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCurso_Curso" Association="GimnasioModel.Store.FK_RelMembresiaCurso_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="RelMembresiaCurso" EntitySet="RelMembresiaCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCurso_Membresia" Association="GimnasioModel.Store.FK_RelMembresiaCurso_Membresia">
+            <End Role="Membresia" EntitySet="Membresia" />
+            <End Role="RelMembresiaCurso" EntitySet="RelMembresiaCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Entrenador" Association="GimnasioModel.Store.FK_Usuario_Entrenador">
+            <End Role="Entrenador" EntitySet="Entrenador" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Gimnasio" Association="GimnasioModel.Store.FK_Usuario_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Telefono" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="IdCurso" />
+          </Key>
+          <Property Name="IdCurso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Precio" Type="money" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Entrenador">
+          <Key>
+            <PropertyRef Name="IdEntrenador" />
+          </Key>
+          <Property Name="IdEntrenador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varbinary" Nullable="false" MaxLength="50" />
+          <Property Name="Telefono" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gimnasio">
+          <Key>
+            <PropertyRef Name="IdGimnasio" />
+          </Key>
+          <Property Name="IdGimnasio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Horario">
+          <Key>
+            <PropertyRef Name="IdHorario" />
+          </Key>
+          <Property Name="IdHorario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdMembresia" Type="int" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+          <Property Name="Dia" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="HoraEntrada" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="HoraSalida" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Inventario">
+          <Key>
+            <PropertyRef Name="IdInventario" />
+          </Key>
+          <Property Name="IdInventario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="int" Nullable="false" />
+          <Property Name="IdMaterial" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="IdMaterial" />
+          </Key>
+          <Property Name="IdMaterial" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Marca" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Membresia">
+          <Key>
+            <PropertyRef Name="IdMembresia" />
+          </Key>
+          <Property Name="IdMembresia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelEntrenadorCurso">
+          <Key>
+            <PropertyRef Name="IdRelEntrenadorCurso" />
+          </Key>
+          <Property Name="IdRelEntrenadorCurso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdEntrenador" Type="int" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelMembresiaCliente">
+          <Key>
+            <PropertyRef Name="IdRelMembresiaCliente" />
+          </Key>
+          <Property Name="IdRelMembresiaCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdMembresia" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelMembresiaCurso">
+          <Key>
+            <PropertyRef Name="IdMembresiaCurso" />
+          </Key>
+          <Property Name="IdMembresiaCurso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdMembresia" Type="int" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="int" Nullable="false" />
+          <Property Name="IdEntrenador" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NombreUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Contraseña" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Telefono" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cliente_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Store.Gimnasio" Multiplicity="1" />
+          <End Role="Cliente" Type="GimnasioModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curso_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Store.Gimnasio" Multiplicity="1" />
+          <End Role="Curso" Type="GimnasioModel.Store.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Entrenador_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Store.Gimnasio" Multiplicity="1" />
+          <End Role="Entrenador" Type="GimnasioModel.Store.Entrenador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Entrenador">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_Curso">
+          <End Role="Curso" Type="GimnasioModel.Store.Curso" Multiplicity="1" />
+          <End Role="Horario" Type="GimnasioModel.Store.Horario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Horario">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_Membresia">
+          <End Role="Membresia" Type="GimnasioModel.Store.Membresia" Multiplicity="1" />
+          <End Role="Horario" Type="GimnasioModel.Store.Horario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membresia">
+              <PropertyRef Name="IdMembresia" />
+            </Principal>
+            <Dependent Role="Horario">
+              <PropertyRef Name="IdMembresia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventario_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Store.Gimnasio" Multiplicity="1" />
+          <End Role="Inventario" Type="GimnasioModel.Store.Inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Inventario">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventario_Material">
+          <End Role="Material" Type="GimnasioModel.Store.Material" Multiplicity="1" />
+          <End Role="Inventario" Type="GimnasioModel.Store.Inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="IdMaterial" />
+            </Principal>
+            <Dependent Role="Inventario">
+              <PropertyRef Name="IdMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membresia_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Store.Gimnasio" Multiplicity="1" />
+          <End Role="Membresia" Type="GimnasioModel.Store.Membresia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Membresia">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelEntrenadorCurso_Curso">
+          <End Role="Curso" Type="GimnasioModel.Store.Curso" Multiplicity="1" />
+          <End Role="RelEntrenadorCurso" Type="GimnasioModel.Store.RelEntrenadorCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="RelEntrenadorCurso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelEntrenadorCurso_Entrenador">
+          <End Role="Entrenador" Type="GimnasioModel.Store.Entrenador" Multiplicity="1" />
+          <End Role="RelEntrenadorCurso" Type="GimnasioModel.Store.RelEntrenadorCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entrenador">
+              <PropertyRef Name="IdEntrenador" />
+            </Principal>
+            <Dependent Role="RelEntrenadorCurso">
+              <PropertyRef Name="IdEntrenador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCliente_Cliente">
+          <End Role="Cliente" Type="GimnasioModel.Store.Cliente" Multiplicity="1" />
+          <End Role="RelMembresiaCliente" Type="GimnasioModel.Store.RelMembresiaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="RelMembresiaCliente">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCliente_Membresia">
+          <End Role="Membresia" Type="GimnasioModel.Store.Membresia" Multiplicity="1" />
+          <End Role="RelMembresiaCliente" Type="GimnasioModel.Store.RelMembresiaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membresia">
+              <PropertyRef Name="IdMembresia" />
+            </Principal>
+            <Dependent Role="RelMembresiaCliente">
+              <PropertyRef Name="IdMembresia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCurso_Curso">
+          <End Role="Curso" Type="GimnasioModel.Store.Curso" Multiplicity="1" />
+          <End Role="RelMembresiaCurso" Type="GimnasioModel.Store.RelMembresiaCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="RelMembresiaCurso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCurso_Membresia">
+          <End Role="Membresia" Type="GimnasioModel.Store.Membresia" Multiplicity="1" />
+          <End Role="RelMembresiaCurso" Type="GimnasioModel.Store.RelMembresiaCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membresia">
+              <PropertyRef Name="IdMembresia" />
+            </Principal>
+            <Dependent Role="RelMembresiaCurso">
+              <PropertyRef Name="IdMembresia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Entrenador">
+          <End Role="Entrenador" Type="GimnasioModel.Store.Entrenador" Multiplicity="1" />
+          <End Role="Usuario" Type="GimnasioModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entrenador">
+              <PropertyRef Name="IdEntrenador" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdEntrenador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Store.Gimnasio" Multiplicity="1" />
+          <End Role="Usuario" Type="GimnasioModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GimnasioModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GimnasioEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="GimnasioModel.Cliente" />
+          <EntitySet Name="Curso" EntityType="GimnasioModel.Curso" />
+          <EntitySet Name="Entrenador" EntityType="GimnasioModel.Entrenador" />
+          <EntitySet Name="Gimnasio" EntityType="GimnasioModel.Gimnasio" />
+          <EntitySet Name="Horario" EntityType="GimnasioModel.Horario" />
+          <EntitySet Name="Inventario" EntityType="GimnasioModel.Inventario" />
+          <EntitySet Name="Material" EntityType="GimnasioModel.Material" />
+          <EntitySet Name="Membresia" EntityType="GimnasioModel.Membresia" />
+          <EntitySet Name="RelEntrenadorCurso" EntityType="GimnasioModel.RelEntrenadorCurso" />
+          <EntitySet Name="RelMembresiaCliente" EntityType="GimnasioModel.RelMembresiaCliente" />
+          <EntitySet Name="RelMembresiaCurso" EntityType="GimnasioModel.RelMembresiaCurso" />
+          <EntitySet Name="sysdiagrams" EntityType="GimnasioModel.sysdiagrams" />
+          <EntitySet Name="Usuario" EntityType="GimnasioModel.Usuario" />
+          <AssociationSet Name="FK_Cliente_Gimnasio" Association="GimnasioModel.FK_Cliente_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCliente_Cliente" Association="GimnasioModel.FK_RelMembresiaCliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="RelMembresiaCliente" EntitySet="RelMembresiaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curso_Gimnasio" Association="GimnasioModel.FK_Curso_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_Curso" Association="GimnasioModel.FK_Horario_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Horario" EntitySet="Horario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelEntrenadorCurso_Curso" Association="GimnasioModel.FK_RelEntrenadorCurso_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="RelEntrenadorCurso" EntitySet="RelEntrenadorCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCurso_Curso" Association="GimnasioModel.FK_RelMembresiaCurso_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="RelMembresiaCurso" EntitySet="RelMembresiaCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Entrenador_Gimnasio" Association="GimnasioModel.FK_Entrenador_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Entrenador" EntitySet="Entrenador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelEntrenadorCurso_Entrenador" Association="GimnasioModel.FK_RelEntrenadorCurso_Entrenador">
+            <End Role="Entrenador" EntitySet="Entrenador" />
+            <End Role="RelEntrenadorCurso" EntitySet="RelEntrenadorCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Entrenador" Association="GimnasioModel.FK_Usuario_Entrenador">
+            <End Role="Entrenador" EntitySet="Entrenador" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventario_Gimnasio" Association="GimnasioModel.FK_Inventario_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membresia_Gimnasio" Association="GimnasioModel.FK_Membresia_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Membresia" EntitySet="Membresia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Gimnasio" Association="GimnasioModel.FK_Usuario_Gimnasio">
+            <End Role="Gimnasio" EntitySet="Gimnasio" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_Membresia" Association="GimnasioModel.FK_Horario_Membresia">
+            <End Role="Membresia" EntitySet="Membresia" />
+            <End Role="Horario" EntitySet="Horario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventario_Material" Association="GimnasioModel.FK_Inventario_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCliente_Membresia" Association="GimnasioModel.FK_RelMembresiaCliente_Membresia">
+            <End Role="Membresia" EntitySet="Membresia" />
+            <End Role="RelMembresiaCliente" EntitySet="RelMembresiaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelMembresiaCurso_Membresia" Association="GimnasioModel.FK_RelMembresiaCurso_Membresia">
+            <End Role="Membresia" EntitySet="Membresia" />
+            <End Role="RelMembresiaCurso" EntitySet="RelMembresiaCurso" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GimnasioModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GimnasioModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Gimnasio" Relationship="GimnasioModel.FK_Cliente_Gimnasio" FromRole="Cliente" ToRole="Gimnasio" />
+          <NavigationProperty Name="RelMembresiaCliente" Relationship="GimnasioModel.FK_RelMembresiaCliente_Cliente" FromRole="Cliente" ToRole="RelMembresiaCliente" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="IdCurso" />
+          </Key>
+          <Property Name="IdCurso" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Gimnasio" Relationship="GimnasioModel.FK_Curso_Gimnasio" FromRole="Curso" ToRole="Gimnasio" />
+          <NavigationProperty Name="Horario" Relationship="GimnasioModel.FK_Horario_Curso" FromRole="Curso" ToRole="Horario" />
+          <NavigationProperty Name="RelEntrenadorCurso" Relationship="GimnasioModel.FK_RelEntrenadorCurso_Curso" FromRole="Curso" ToRole="RelEntrenadorCurso" />
+          <NavigationProperty Name="RelMembresiaCurso" Relationship="GimnasioModel.FK_RelMembresiaCurso_Curso" FromRole="Curso" ToRole="RelMembresiaCurso" />
+        </EntityType>
+        <EntityType Name="Entrenador">
+          <Key>
+            <PropertyRef Name="IdEntrenador" />
+          </Key>
+          <Property Name="IdEntrenador" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="Binary" Nullable="false" MaxLength="50" FixedLength="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Gimnasio" Relationship="GimnasioModel.FK_Entrenador_Gimnasio" FromRole="Entrenador" ToRole="Gimnasio" />
+          <NavigationProperty Name="RelEntrenadorCurso" Relationship="GimnasioModel.FK_RelEntrenadorCurso_Entrenador" FromRole="Entrenador" ToRole="RelEntrenadorCurso" />
+          <NavigationProperty Name="Usuario" Relationship="GimnasioModel.FK_Usuario_Entrenador" FromRole="Entrenador" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Gimnasio">
+          <Key>
+            <PropertyRef Name="IdGimnasio" />
+          </Key>
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="GimnasioModel.FK_Cliente_Gimnasio" FromRole="Gimnasio" ToRole="Cliente" />
+          <NavigationProperty Name="Curso" Relationship="GimnasioModel.FK_Curso_Gimnasio" FromRole="Gimnasio" ToRole="Curso" />
+          <NavigationProperty Name="Entrenador" Relationship="GimnasioModel.FK_Entrenador_Gimnasio" FromRole="Gimnasio" ToRole="Entrenador" />
+          <NavigationProperty Name="Inventario" Relationship="GimnasioModel.FK_Inventario_Gimnasio" FromRole="Gimnasio" ToRole="Inventario" />
+          <NavigationProperty Name="Membresia" Relationship="GimnasioModel.FK_Membresia_Gimnasio" FromRole="Gimnasio" ToRole="Membresia" />
+          <NavigationProperty Name="Usuario" Relationship="GimnasioModel.FK_Usuario_Gimnasio" FromRole="Gimnasio" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Horario">
+          <Key>
+            <PropertyRef Name="IdHorario" />
+          </Key>
+          <Property Name="IdHorario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMembresia" Type="Int32" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <Property Name="Dia" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="HoraEntrada" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="HoraSalida" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Curso" Relationship="GimnasioModel.FK_Horario_Curso" FromRole="Horario" ToRole="Curso" />
+          <NavigationProperty Name="Membresia" Relationship="GimnasioModel.FK_Horario_Membresia" FromRole="Horario" ToRole="Membresia" />
+        </EntityType>
+        <EntityType Name="Inventario">
+          <Key>
+            <PropertyRef Name="IdInventario" />
+          </Key>
+          <Property Name="IdInventario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IdMaterial" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gimnasio" Relationship="GimnasioModel.FK_Inventario_Gimnasio" FromRole="Inventario" ToRole="Gimnasio" />
+          <NavigationProperty Name="Material" Relationship="GimnasioModel.FK_Inventario_Material" FromRole="Inventario" ToRole="Material" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="IdMaterial" />
+          </Key>
+          <Property Name="IdMaterial" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Inventario" Relationship="GimnasioModel.FK_Inventario_Material" FromRole="Material" ToRole="Inventario" />
+        </EntityType>
+        <EntityType Name="Membresia">
+          <Key>
+            <PropertyRef Name="IdMembresia" />
+          </Key>
+          <Property Name="IdMembresia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Gimnasio" Relationship="GimnasioModel.FK_Membresia_Gimnasio" FromRole="Membresia" ToRole="Gimnasio" />
+          <NavigationProperty Name="Horario" Relationship="GimnasioModel.FK_Horario_Membresia" FromRole="Membresia" ToRole="Horario" />
+          <NavigationProperty Name="RelMembresiaCliente" Relationship="GimnasioModel.FK_RelMembresiaCliente_Membresia" FromRole="Membresia" ToRole="RelMembresiaCliente" />
+          <NavigationProperty Name="RelMembresiaCurso" Relationship="GimnasioModel.FK_RelMembresiaCurso_Membresia" FromRole="Membresia" ToRole="RelMembresiaCurso" />
+        </EntityType>
+        <EntityType Name="RelEntrenadorCurso">
+          <Key>
+            <PropertyRef Name="IdRelEntrenadorCurso" />
+          </Key>
+          <Property Name="IdRelEntrenadorCurso" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEntrenador" Type="Int32" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Curso" Relationship="GimnasioModel.FK_RelEntrenadorCurso_Curso" FromRole="RelEntrenadorCurso" ToRole="Curso" />
+          <NavigationProperty Name="Entrenador" Relationship="GimnasioModel.FK_RelEntrenadorCurso_Entrenador" FromRole="RelEntrenadorCurso" ToRole="Entrenador" />
+        </EntityType>
+        <EntityType Name="RelMembresiaCliente">
+          <Key>
+            <PropertyRef Name="IdRelMembresiaCliente" />
+          </Key>
+          <Property Name="IdRelMembresiaCliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMembresia" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="GimnasioModel.FK_RelMembresiaCliente_Cliente" FromRole="RelMembresiaCliente" ToRole="Cliente" />
+          <NavigationProperty Name="Membresia" Relationship="GimnasioModel.FK_RelMembresiaCliente_Membresia" FromRole="RelMembresiaCliente" ToRole="Membresia" />
+        </EntityType>
+        <EntityType Name="RelMembresiaCurso">
+          <Key>
+            <PropertyRef Name="IdMembresiaCurso" />
+          </Key>
+          <Property Name="IdMembresiaCurso" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMembresia" Type="Int32" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Curso" Relationship="GimnasioModel.FK_RelMembresiaCurso_Curso" FromRole="RelMembresiaCurso" ToRole="Curso" />
+          <NavigationProperty Name="Membresia" Relationship="GimnasioModel.FK_RelMembresiaCurso_Membresia" FromRole="RelMembresiaCurso" ToRole="Membresia" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IdEntrenador" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NombreUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Entrenador" Relationship="GimnasioModel.FK_Usuario_Entrenador" FromRole="Usuario" ToRole="Entrenador" />
+          <NavigationProperty Name="Gimnasio" Relationship="GimnasioModel.FK_Usuario_Gimnasio" FromRole="Usuario" ToRole="Gimnasio" />
+        </EntityType>
+        <Association Name="FK_Cliente_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Gimnasio" Multiplicity="1" />
+          <End Role="Cliente" Type="GimnasioModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCliente_Cliente">
+          <End Role="Cliente" Type="GimnasioModel.Cliente" Multiplicity="1" />
+          <End Role="RelMembresiaCliente" Type="GimnasioModel.RelMembresiaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="RelMembresiaCliente">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curso_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Gimnasio" Multiplicity="1" />
+          <End Role="Curso" Type="GimnasioModel.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_Curso">
+          <End Role="Curso" Type="GimnasioModel.Curso" Multiplicity="1" />
+          <End Role="Horario" Type="GimnasioModel.Horario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Horario">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelEntrenadorCurso_Curso">
+          <End Role="Curso" Type="GimnasioModel.Curso" Multiplicity="1" />
+          <End Role="RelEntrenadorCurso" Type="GimnasioModel.RelEntrenadorCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="RelEntrenadorCurso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCurso_Curso">
+          <End Role="Curso" Type="GimnasioModel.Curso" Multiplicity="1" />
+          <End Role="RelMembresiaCurso" Type="GimnasioModel.RelMembresiaCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="RelMembresiaCurso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Entrenador_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Gimnasio" Multiplicity="1" />
+          <End Role="Entrenador" Type="GimnasioModel.Entrenador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Entrenador">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelEntrenadorCurso_Entrenador">
+          <End Role="Entrenador" Type="GimnasioModel.Entrenador" Multiplicity="1" />
+          <End Role="RelEntrenadorCurso" Type="GimnasioModel.RelEntrenadorCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entrenador">
+              <PropertyRef Name="IdEntrenador" />
+            </Principal>
+            <Dependent Role="RelEntrenadorCurso">
+              <PropertyRef Name="IdEntrenador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Entrenador">
+          <End Role="Entrenador" Type="GimnasioModel.Entrenador" Multiplicity="1" />
+          <End Role="Usuario" Type="GimnasioModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entrenador">
+              <PropertyRef Name="IdEntrenador" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdEntrenador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventario_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Gimnasio" Multiplicity="1" />
+          <End Role="Inventario" Type="GimnasioModel.Inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Inventario">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membresia_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Gimnasio" Multiplicity="1" />
+          <End Role="Membresia" Type="GimnasioModel.Membresia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Membresia">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Gimnasio">
+          <End Role="Gimnasio" Type="GimnasioModel.Gimnasio" Multiplicity="1" />
+          <End Role="Usuario" Type="GimnasioModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gimnasio">
+              <PropertyRef Name="IdGimnasio" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdGimnasio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_Membresia">
+          <End Role="Membresia" Type="GimnasioModel.Membresia" Multiplicity="1" />
+          <End Role="Horario" Type="GimnasioModel.Horario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membresia">
+              <PropertyRef Name="IdMembresia" />
+            </Principal>
+            <Dependent Role="Horario">
+              <PropertyRef Name="IdMembresia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventario_Material">
+          <End Role="Material" Type="GimnasioModel.Material" Multiplicity="1" />
+          <End Role="Inventario" Type="GimnasioModel.Inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="IdMaterial" />
+            </Principal>
+            <Dependent Role="Inventario">
+              <PropertyRef Name="IdMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCliente_Membresia">
+          <End Role="Membresia" Type="GimnasioModel.Membresia" Multiplicity="1" />
+          <End Role="RelMembresiaCliente" Type="GimnasioModel.RelMembresiaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membresia">
+              <PropertyRef Name="IdMembresia" />
+            </Principal>
+            <Dependent Role="RelMembresiaCliente">
+              <PropertyRef Name="IdMembresia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelMembresiaCurso_Membresia">
+          <End Role="Membresia" Type="GimnasioModel.Membresia" Multiplicity="1" />
+          <End Role="RelMembresiaCurso" Type="GimnasioModel.RelMembresiaCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membresia">
+              <PropertyRef Name="IdMembresia" />
+            </Principal>
+            <Dependent Role="RelMembresiaCurso">
+              <PropertyRef Name="IdMembresia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GimnasioModelStoreContainer" CdmEntityContainer="GimnasioEntities">
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="GimnasioModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Curso">
+            <EntityTypeMapping TypeName="GimnasioModel.Curso">
+              <MappingFragment StoreEntitySet="Curso">
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entrenador">
+            <EntityTypeMapping TypeName="GimnasioModel.Entrenador">
+              <MappingFragment StoreEntitySet="Entrenador">
+                <ScalarProperty Name="IdEntrenador" ColumnName="IdEntrenador" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gimnasio">
+            <EntityTypeMapping TypeName="GimnasioModel.Gimnasio">
+              <MappingFragment StoreEntitySet="Gimnasio">
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Horario">
+            <EntityTypeMapping TypeName="GimnasioModel.Horario">
+              <MappingFragment StoreEntitySet="Horario">
+                <ScalarProperty Name="IdHorario" ColumnName="IdHorario" />
+                <ScalarProperty Name="IdMembresia" ColumnName="IdMembresia" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="HoraEntrada" ColumnName="HoraEntrada" />
+                <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventario">
+            <EntityTypeMapping TypeName="GimnasioModel.Inventario">
+              <MappingFragment StoreEntitySet="Inventario">
+                <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Material">
+            <EntityTypeMapping TypeName="GimnasioModel.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membresia">
+            <EntityTypeMapping TypeName="GimnasioModel.Membresia">
+              <MappingFragment StoreEntitySet="Membresia">
+                <ScalarProperty Name="IdMembresia" ColumnName="IdMembresia" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelEntrenadorCurso">
+            <EntityTypeMapping TypeName="GimnasioModel.RelEntrenadorCurso">
+              <MappingFragment StoreEntitySet="RelEntrenadorCurso">
+                <ScalarProperty Name="IdRelEntrenadorCurso" ColumnName="IdRelEntrenadorCurso" />
+                <ScalarProperty Name="IdEntrenador" ColumnName="IdEntrenador" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelMembresiaCliente">
+            <EntityTypeMapping TypeName="GimnasioModel.RelMembresiaCliente">
+              <MappingFragment StoreEntitySet="RelMembresiaCliente">
+                <ScalarProperty Name="IdRelMembresiaCliente" ColumnName="IdRelMembresiaCliente" />
+                <ScalarProperty Name="IdMembresia" ColumnName="IdMembresia" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelMembresiaCurso">
+            <EntityTypeMapping TypeName="GimnasioModel.RelMembresiaCurso">
+              <MappingFragment StoreEntitySet="RelMembresiaCurso">
+                <ScalarProperty Name="IdMembresiaCurso" ColumnName="IdMembresiaCurso" />
+                <ScalarProperty Name="IdMembresia" ColumnName="IdMembresia" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GimnasioModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="GimnasioModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="IdEntrenador" ColumnName="IdEntrenador" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GimnasioModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GimnasioModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GimnasioModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GimnasioModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GimnasioModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GimnasioModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GimnasioModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GimnasioModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GimnasioModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
