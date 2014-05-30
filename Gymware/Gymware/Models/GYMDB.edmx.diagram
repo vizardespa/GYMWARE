@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2f012080f68e48ffb0b8a01ee22a5792" Name="Diagrama1">
+      <Diagram DiagramId="2f012080f68e48ffb0b8a01ee22a5792" Name="Diagrama1" ZoomLevel="107">
         <EntityTypeShape EntityType="GimnasioModel.Cliente" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GimnasioModel.Curso" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="GimnasioModel.Entrenador" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
@@ -34,6 +34,43 @@
         <AssociationConnector Association="GimnasioModel.FK_Inventario_Material" ManuallyRouted="false" />
         <AssociationConnector Association="GimnasioModel.FK_RelMembresiaCliente_Membresia" ManuallyRouted="false" />
         <AssociationConnector Association="GimnasioModel.FK_RelMembresiaCurso_Membresia" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GimnasioModel.CompraVenta" Width="1.5" PointX="3.1595144919862577" PointY="19.92065308425606" />
+        <EntityTypeShape EntityType="GimnasioModel.InventarioProducto" Width="1.5" PointX="11.950864590681562" PointY="13.222997254330197" />
+        <EntityTypeShape EntityType="GimnasioModel.ItemMaterial" Width="1.5" PointX="3.0093735563612425" PointY="25.084428918121581" />
+        <EntityTypeShape EntityType="GimnasioModel.Producto" Width="1.5" PointX="8.10282878768762" PointY="10.976343651756805" />
+        <EntityTypeShape EntityType="GimnasioModel.Promocion" Width="1.5" PointX="2.4190013922839433" PointY="12.907836458137183" />
+        <EntityTypeShape EntityType="GimnasioModel.RelacionClienteCompra" Width="1.5" PointX="8.2429649551599127" PointY="9.9971175240339321" />
+        <EntityTypeShape EntityType="GimnasioModel.RelacionCompraVentaMembresia" Width="1.5" PointX="11.545994208914225" PointY="8.7676627080736971" />
+        <EntityTypeShape EntityType="GimnasioModel.RelacionCompraVentaProducto" Width="1.5" PointX="6.3368810239885374" PointY="26.017794174150467" />
+        <EntityTypeShape EntityType="GimnasioModel.RelacionUsuarioVenta" Width="1.5" PointX="10.153947298486692" PointY="27.744336364671746" />
+        <EntityTypeShape EntityType="GimnasioModel.RelacionUtilidadPromocion" Width="1.5" PointX="1.1653590710672359" PointY="30.29929110328634" />
+        <EntityTypeShape EntityType="GimnasioModel.UsuarioCheckLog" Width="1.5" PointX="4.6892338603219175" PointY="19.874266097263558" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Cliente" Width="1.5" PointX="9.1074911621899766" PointY="15.679858870655233" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Curso" Width="1.5" PointX="5.158933518994103" PointY="19.115735197028023" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Entrenador" Width="1.5" PointX="11.066057977763032" PointY="12.725055879319578" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Gimnasio" Width="1.5" PointX="1.4239880132600609" PointY="26.513044757076095" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Horario" Width="1.5" PointX="10.480780105330414" PointY="28.65703895532388" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Inventario" Width="1.5" PointX="7.3748521876404309" PointY="25.958805632758331" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Material" Width="1.5" PointX="3.7852492797119774" PointY="20.440331721883421" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Membresia" Width="1.5" PointX="7.5693419741323886" PointY="20.69100881586364" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_RelEntrenadorCurso" Width="1.5" PointX="6.0338273132377438" PointY="14.00783923920609" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_RelMembresiaCliente" Width="1.5" PointX="5.3973664051840862" PointY="31.83200700573251" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_RelMembresiaCurso" Width="1.5" PointX="11.625124700192886" PointY="28.701875133766734" />
+        <EntityTypeShape EntityType="GimnasioModel.VW_Usuario" Width="1.5" PointX="9.0515738991329329" PointY="14.836318887228295" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionClienteCompra_Cliente" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionClienteCompra_CompraVenta" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionCompraVentaMembresia_CompraVenta" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionCompraVentaProducto_CompraVenta" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionUsuarioVenta_CompraVenta" />
+        <AssociationConnector Association="GimnasioModel.FK_InventarioProducto_Producto" />
+        <AssociationConnector Association="GimnasioModel.FK_ItemMaterial_Material" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionCompraVentaMembresia_Membresia" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionUtilidadPromocion_Membresia" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionCompraVentaProducto_Producto" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionUtilidadPromocion_Producto" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionUtilidadPromocion_Promocion" />
+        <AssociationConnector Association="GimnasioModel.FK_RelacionUsuarioVenta_Usuario" />
+        <AssociationConnector Association="GimnasioModel.FK_UsuarioCheckLog_Usuario" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
