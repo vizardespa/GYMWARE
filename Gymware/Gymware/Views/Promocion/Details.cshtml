@@ -1,0 +1,50 @@
+﻿@model Gymware.Models.Promocion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Promocion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdPromocion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdPromocion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descuento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descuento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Activo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Activo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

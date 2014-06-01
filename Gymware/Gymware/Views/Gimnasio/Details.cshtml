@@ -1,0 +1,36 @@
+﻿@model Gymware.Models.Gimnasio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Gimnasio</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdGimnasio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdGimnasio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Direccion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

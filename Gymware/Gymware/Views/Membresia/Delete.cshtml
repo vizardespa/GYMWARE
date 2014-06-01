@@ -1,0 +1,60 @@
+﻿@model Gymware.Models.Membresia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Membresia</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdMembresia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdMembresia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gimnasio.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gimnasio.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaVencimiento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaVencimiento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Activo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Activo)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
