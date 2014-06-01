@@ -292,6 +292,9 @@
     <Compile Include="Models\VW_Inventario.cs">
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VW_ItemMaterial.cs">
+      <DependentUpon>GYMDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\VW_Material.cs">
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>
@@ -373,6 +376,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GYMDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="GYMWARElogo.png" />
+    <Content Include="logoGym.ico" />
     <Content Include="Models\GYMDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GYMDB.edmx</DependentUpon>

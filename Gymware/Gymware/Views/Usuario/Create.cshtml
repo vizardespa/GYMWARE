@@ -3,7 +3,33 @@
 @{
     ViewBag.Title = "Create";
 }
+<style type="text/css">
+    .bgCol {
+        /*background-image: url(../TURBO!.png);
+            background-color:white;
+            background-size:contain;
+            background-repeat:no-repeat;
+            background-position-x:center;*/
+        color: black;
+    }
 
+     .bgColLink {
+         background-color: transparent;
+         outline: none;
+         width: 250px;
+         height: 120px;
+         text-decoration: none;
+     }
+
+    .bgColLink:link, .bgColLink:visited, bgColLin:active {
+        color: #000;
+    }
+
+    .bgColLink:hover {
+        background-color: transparent;
+        text-decoration: underline;
+    }
+</style>
 <h2>Create</h2>
 
 @using (Html.BeginForm()) {
@@ -13,14 +39,14 @@
     <fieldset>
         <legend>Usuario</legend>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.IdUsuario)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IdUsuario)
             @Html.ValidationMessageFor(model => model.IdUsuario)
-        </div>
-
+        </div>*@
+        <br/>
         <div class="editor-label">
             @Html.LabelFor(model => model.IdGimnasio, "Gimnasio")
         </div>
@@ -46,7 +72,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.NombreUsuario)
+            @Html.LabelFor(model => model.NombreUsuario, "Nombre de Usuario")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.NombreUsuario)
@@ -62,7 +88,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Telefono)
+            @Html.LabelFor(model => model.Telefono, "Teléfono")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Telefono)
@@ -70,7 +96,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Direccion)
+            @Html.LabelFor(model => model.Direccion, "Dirección")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Direccion)
@@ -92,7 +118,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Login", "Login", "", new { Class = "bgColLink" })
 </div>
 
 @section Scripts {
