@@ -1,0 +1,78 @@
+﻿@model Gymware.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdUsuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gimnasio.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gimnasio.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Entrenador.Telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Entrenador.Telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NombreUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NombreUsuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contraseña)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contraseña)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Direccion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Activo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Activo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

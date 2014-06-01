@@ -1,0 +1,106 @@
+﻿﻿@model Gymware.Models.Usuario
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Usuario/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .colorAction {
+        color: black;
+       ;
+    }
+
+        .colorAction:hover {
+            background-color:blue;
+            color: white;
+           ;
+        }
+
+    .colorAction:link {
+        color: black;
+       ;
+    }
+
+    .colorAction:visited {
+        color: orangered;
+       ;
+    }
+
+   
+</style>
+<div>
+    <p align="center">
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        @using (Html.BeginForm()) {
+            <center>
+                @Html.AntiForgeryToken()
+                @Html.Label("Usuario")
+                @Html.TextBoxFor(m=>m.NombreUsuario)
+                @Html.LabelFor(m=>m.Contraseña)
+                @Html.TextBoxFor(m=>m.Contraseña,new { type = "password"})
+                <br />
+                <br />
+                <input type="submit" value="Ingresar" />
+                <br />
+                @Html.ActionLink("Aun no cuentas con un usuario?", "Create", new { @Class = "colorAction" })
+               
+            </center>
+        }
+       
+    </p>
+   
+</div>
+
+@*<h2>Index</h2>
+   
+   <p>
+       @Html.ActionLink("Create New", "Create")
+   </p>
+   <table>
+       <tr>
+           <th>
+               @Html.DisplayNameFor(model => model.TipoUsuario.Nombre)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.Nombre)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.Usuario1)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.Contraseña)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.IdTipoUsuario)
+           </th>
+           <th></th>
+       </tr>
+   
+   @foreach (var item in Model) {
+       <tr>
+           <td>
+               @Html.DisplayFor(modelItem => item.TipoUsuario.Nombre)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.Nombre)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.Usuario1)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.Contraseña)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.IdTipoUsuario)
+           </td>
+           <td>
+               @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+               @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+               @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+           </td>
+       </tr>
+   }
+   
+   </table>*@
+
