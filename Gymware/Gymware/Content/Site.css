@@ -27,7 +27,7 @@ a {
     }
 
     a:hover {
-        background-color: #c7d1d6;
+        background-color: lightblue;
     }
 
 header, footer, hgroup,
@@ -152,11 +152,16 @@ footer {
 }
 
     #login a {
-        background-color: #d3dce0;
+        background-color: transparent;
         margin-left: 10px;
         margin-right: 3px;
         padding: 2px 3px;
         text-decoration: none;
+    }
+
+    #login a:hover {
+        background: lightblue;
+        color: black;
     }
 
     #login a.username {
@@ -200,8 +205,10 @@ ul#menu {
 
         ul#menu li a:hover {
             color: #333;
-            text-decoration: none;
+            text-decoration: underline;
         }
+
+
 
 
 /* page elements
@@ -536,8 +543,10 @@ table {
 }
 
 th {
+    background-color: blue;
+    color: white;
     font-size: 1.2em;
-    text-align: left;
+    text-align: center;
     border: none 0px;
     padding-left: 0;
 }
@@ -548,8 +557,9 @@ th {
     }
 
     th a:link, th a:visited, th a:active, th a:hover {
-        color: #333;
-        font-weight: 600;
+        color: white;
+        background-color: blue;
+        font-weight: bold;
         text-decoration: none;
         padding: 0;
     }

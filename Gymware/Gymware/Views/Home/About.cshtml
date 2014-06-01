@@ -1,27 +1,60 @@
 ﻿@{
     ViewBag.Title = "Acerca de";
 }
-
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
+    <h1>@ViewBag.Title</h1>
 </hgroup>
+<style type="text/css">
+    .colorLabel {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
+        .colorLabel:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .colorLabel:link {
+            color: black;
+        }
+
+        .colorLabel:visited {
+            color: orangered;
+        }
+
+    .colorParagraph {
+        color: black;
+        /*background-color: lightgray;*/
+        font-family: Arial;
+        text-decoration: none;
+        line-height: 200%;
+    }
+</style>
 <article>
-    <p>
-        Use esta área para proporcionar información adicional.
-    </p>
-
-    <p>
-        Use esta área para proporcionar información adicional.
-    </p>
-
-    <p>
-        Use esta área para proporcionar información adicional.
+    <p class="colorParagraph">
+        La tecnología ha avanzado de una manera impresionante y se ha hecho parte de nuestra vida diaria. Un ejemplo de esto son los sistemas para el manejo de la información; 
+        que su existencia e implementación es tan común actualmente utilizando diferentes tecnologías en casi todas las áreas de negocios. Nuestro proyecto tiene 
+        como objetivo la creación de un sistema para gimnasios. Dicho sistema busca organizar y realizar consultas a sus clientes, además de contar con herramientas para actualizar, eliminar y documentar a cada uno de éstos, 
+        y dependiendo del caso, se podrán visualizar sus horarios; en este punto se desea una fácil manipulación de la información, pero evitando quitar la funcionalidad de verlo desde el programa.
     </p>
 </article>
 
-<aside>
+<article>
+    <br />
+    <hgroup class="title">
+        <h1>Visión</h1>
+    </hgroup>
+    <p class="colorParagraph">
+        El objetivo que buscamos alcanzar con nuestro sistema es la facilitación de consultas y exportación de información acerca de los usuarios y sus horarios 
+        que se encontrarán previamente organizados. Queremos que nuestros clientes puedan contar con un sistema completo y eficaz, que les brinde apoyo y ayuda 
+        en distintas áreas y necesidades que ellos tengan, para facilitarles de esta manera su trabajo y les permita ahorrar recursos, tiempo y dinero.
+    </p>
+</article>
+
+@*<aside>
     <h3>Al lado del título</h3>
     <p>
         Use esta área para proporcionar información adicional.
@@ -31,4 +64,4 @@
         <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
         <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
     </ul>
-</aside>
+</aside>*@

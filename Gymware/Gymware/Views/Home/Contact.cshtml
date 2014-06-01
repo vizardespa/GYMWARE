@@ -1,50 +1,67 @@
 ﻿@{
     ViewBag.Title = "Contacto";
 }
+<style type="text/css">
+    .colorLabel {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
+        .colorLabel:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .colorLabel:link {
+            color: black;
+        }
+
+        .colorLabel:visited {
+            color: orangered;
+        }
+</style>
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
 </hgroup>
-
+<br />
 <section class="contact">
     <header>
         <h3>Teléfono</h3>
     </header>
     <p>
         <span class="label">Principal:</span>
-        <span>425.555.0100</span>
+        <span class="colorLabel">664-386-73-71</span>
     </p>
     <p>
-        <span class="label">Fuera del horario laboral:</span>
-        <span>425.555.0199</span>
+        <span class="label">Secundario:</span>
+        <span class="colorLabel">664-291-95-22</span>
     </p>
 </section>
-
 <section class="contact">
     <header>
         <h3>Correo electrónico</h3>
     </header>
     <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
+        <span class="label">Administrador:</span>
+        <span><a class="colorLabel" href="mailto:felipeglez93@hotmail.com">felipeglez93@hotmail.com</a></span>
     </p>
     <p>
-        <span class="label">Marketing:</span>
-        <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
+        <span class="label">Administradora:</span>
+        <span><a class="colorLabel" href="mailto:sara.neri.15927@gmail.com">sara.neri.15927@gmail.com</a></span>
     </p>
     <p>
-        <span class="label">General:</span>
-        <span><a href="mailto:General@example.com">General@example.com</a></span>
+        <span class="label">Administrador:</span>
+        <span><a class="colorLabel" href="mailto:vizardespa@gmail.com">vizardespa@gmail.com</a></span>
     </p>
 </section>
-
 <section class="contact">
     <header>
         <h3>Dirección</h3>
     </header>
-    <p>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399
+    <p class="colorLabel">
+        CETYS Universidad, Tijuana,
+        Baja California, México
     </p>
 </section>

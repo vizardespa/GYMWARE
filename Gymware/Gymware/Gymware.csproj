@@ -377,7 +377,9 @@
       <LastGenOutput>GYMDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="GYMWARElogo.png" />
+    <Content Include="LOGO banner.png" />
     <Content Include="logoGym.ico" />
+    <Content Include="logoGym.png" />
     <Content Include="Models\GYMDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GYMDB.edmx</DependentUpon>
