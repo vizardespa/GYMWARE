@@ -1,71 +1,64 @@
 ﻿@model Gymware.Models.Usuario
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Seguro que desea eliminar esto?</h3>
 <fieldset>
     <legend>Usuario</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Gimnasio.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Gimnasio.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Entrenador.Telefono)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Entrenador.Telefono)
+    <div>
+        <br />
+        <span class="label">Gimnasio:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Gimnasio.Nombre)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NombreUsuario)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NombreUsuario)
+    <div>
+        <br />
+        <span class="label">Teléfono:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Entrenador.Telefono)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Contraseña)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Contraseña)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Telefono)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Telefono)
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Nombre):</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Nombre)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Direccion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Direccion)
+    <div>
+        <br />
+        <span class="label">Nombre de Usuario:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.NombreUsuario)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Activo)
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Contraseña)</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Contraseña)</a></span>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Activo)
+
+    <div>
+        <br />
+        <span class="label">Teléfono:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Telefono)</a></span>
+    </div>
+
+    <div>
+        <br />
+        <span class="label">Dirección:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Direccion)</a></span>
+    </div>
+
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Activo)</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Activo)</a></span>
     </div>
 </fieldset>
+
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     <p>

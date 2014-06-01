@@ -1,33 +1,37 @@
 ﻿@model Gymware.Models.ItemMaterial
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle";
 }
 
-<h2>Details</h2>
+<style type="text/css">
+    .colorLabel {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .colorLabel:hover {
+            text-decoration: underline;
+            background-color: transparent;
+        }
+</style>
+
+<h2>Detalle</h2>
 
 <fieldset>
     <legend>ItemMaterial</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IdItemMaterial)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IdItemMaterial)
+    <div>
+        <br />
+        <span class="label">Material:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Material.Nombre)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Material.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Material.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Condiciones)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Condiciones)
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Condiciones):</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Condiciones)</a></span>
     </div>
 </fieldset>
 <p>

@@ -1,36 +1,29 @@
 ﻿@model Gymware.Models.ItemMaterial
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Seguro que desea eliminar esto?</h3>
+
 <fieldset>
     <legend>ItemMaterial</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IdItemMaterial)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IdItemMaterial)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Material.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Material.Nombre)
+    <div>
+        <br />
+        <span class="label">Material:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Material.Nombre)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Condiciones)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Condiciones)
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Condiciones)</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Condiciones)</a></span>
     </div>
 </fieldset>
+
 @using (Html.BeginForm()) {
     <p>
         <input type="submit" value="Delete" /> |

@@ -1,57 +1,47 @@
 ﻿@model Gymware.Models.Curso
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Seguro que desea eliminar esto?</h3>
 <fieldset>
     <legend>Curso</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IdCurso)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IdCurso)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Gimnasio.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Gimnasio.Nombre)
+    <div>
+        <br />
+        <span class="label">Gimnasio:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Gimnasio.Nombre)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Precio)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Precio)
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Nombre)</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Nombre)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Descripcion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Descripcion)
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Precio)</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Precio)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Activo)
+    <div>
+        <br />
+        <span class="label">Descripción:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Descripcion)</a></span>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Activo)
+
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Activo)</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Activo)</a></span>
+        
     </div>
 </fieldset>
+
 @using (Html.BeginForm()) {
     <p>
         <input type="submit" value="Delete" /> |

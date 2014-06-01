@@ -1,54 +1,56 @@
 ﻿@model Gymware.Models.Membresia
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle";
 }
 
-<h2>Details</h2>
+<style type="text/css">
+    .colorLabel {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .colorLabel:hover {
+            text-decoration: underline;
+            background-color: transparent;
+        }
+</style>
+
+<h2>Detalle</h2>
 
 <fieldset>
     <legend>Membresia</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IdMembresia)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IdMembresia)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Gimnasio.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Gimnasio.Nombre)
+    <div>
+        <br />
+        <span class="label">Gimnasio:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Gimnasio.Nombre):</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Descripcion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Descripcion)
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Nombre):</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Nombre)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.FechaVencimiento)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FechaVencimiento)
+    <div>
+        <br />
+        <span class="label">Descripción:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Descripcion)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Activo)
+    <div>
+        <br />
+        <span class="label">Fecha de Vencimiento:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.FechaVencimiento)</a></span>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Activo)
+
+    <div>
+        <br />
+        <span class="label">@Html.DisplayNameFor(model => model.Activo):</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.Activo)</a></span>
     </div>
 </fieldset>
 <p>
