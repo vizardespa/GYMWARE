@@ -16,9 +16,17 @@ namespace Gymware.Controllers
         //
         // GET: /Producto/
 
-        public ActionResult Index()
+        public ActionResult Index(Producto model)
         {
+            ViewBag.Marcas = db.Producto.Select(p => p.Marca).ToList();
             return View(db.Producto.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Index(string Nombre,string Marca)
+        {
+            ViewBag.Marcas = db.Producto.Select(p => p.Marca).ToList();
+            return View(db.Producto.Select(p=>p).Where(p=>p.Marca.Contains(Marca)&&p.Nombre.Contains(Nombre)));
         }
 
         //
