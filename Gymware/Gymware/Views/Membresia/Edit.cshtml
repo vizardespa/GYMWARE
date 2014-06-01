@@ -12,13 +12,13 @@
     <fieldset>
         <legend>Membresia</legend>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.IdMembresia)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IdMembresia)
             @Html.ValidationMessageFor(model => model.IdMembresia)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.IdGimnasio, "Gimnasio")
@@ -37,7 +37,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Descripcion)
+            @Html.LabelFor(model => model.Descripcion, "Descripción")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Descripcion)
@@ -45,7 +45,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FechaVencimiento)
+            @Html.LabelFor(model => model.FechaVencimiento, "Fecha de Vencimiento")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.FechaVencimiento)

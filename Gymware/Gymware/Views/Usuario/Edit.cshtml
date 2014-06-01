@@ -12,15 +12,6 @@
 
     <fieldset>
         <legend>Usuario</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IdUsuario)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IdUsuario)
-            @Html.ValidationMessageFor(model => model.IdUsuario)
-        </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.IdGimnasio, "Gimnasio")
         </div>
@@ -46,7 +37,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.NombreUsuario)
+            @Html.LabelFor(model => model.NombreUsuario, "Nombre de Usuario")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.NombreUsuario)
@@ -62,7 +53,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Telefono)
+            @Html.LabelFor(model => model.Telefono, "Teléfono")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Telefono)
@@ -70,7 +61,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Direccion)
+            @Html.LabelFor(model => model.Direccion, "Dirección")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Direccion)

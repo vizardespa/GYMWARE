@@ -12,13 +12,13 @@
     <fieldset>
         <legend>Gimnasio</legend>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.IdGimnasio)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IdGimnasio)
             @Html.ValidationMessageFor(model => model.IdGimnasio)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Nombre)
@@ -29,7 +29,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Direccion)
+            @Html.LabelFor(model => model.Direccion, "Dirección")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Direccion)

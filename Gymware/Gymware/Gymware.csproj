@@ -292,6 +292,9 @@
     <Compile Include="Models\VW_Inventario.cs">
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VW_ItemMaterial.cs">
+      <DependentUpon>GYMDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\VW_Material.cs">
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>

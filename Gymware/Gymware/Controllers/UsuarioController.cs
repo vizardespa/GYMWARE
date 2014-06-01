@@ -139,7 +139,7 @@ namespace Gymware.Controllers
                 if (Usuario.Login(user.NombreUsuario, user.Contraseña))
                 {
                     FormsAuthentication.SetAuthCookie(user.NombreUsuario, false);
-                    return RedirectToAction("Index", "Usuario");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
