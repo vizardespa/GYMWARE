@@ -19,7 +19,16 @@ namespace Gymware.Controllers
         public ActionResult Index()
         {
             var curso = db.Curso.Include(c => c.Gimnasio);
+            ViewBag.NombresGimnasios = db.Curso.Select(c => c.Gimnasio.Nombre).Distinct();
             return View(curso.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Index(string NombreCurso, string NombreGym)
+        {
+            var curso = db.Curso.Include(c => c.Gimnasio);
+            ViewBag.NombresGimnasios = db.Curso.Select(c => c.Gimnasio.Nombre).Distinct();
+            return View(curso.Select(c=>c).Where(c=>c.Nombre.ToUpper().Contains(NombreCurso.ToUpper())/*&&c.Gimnasio.Nombre.Contains(NombreGym ?? "")*/).ToList());
         }
 
         //

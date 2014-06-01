@@ -2,8 +2,92 @@
 
 @{
     ViewBag.Title = "Index";
+        WebGrid grid = new WebGrid(Model, // source
+                            null, // columnNames
+                            null, // defaultSort
+                            10,   // rowsPerPage
+                            true, // canPage
+                            true, // canSort
+                            null, // ajaxUpdateContainerId
+                            null, // ajaxUpdateCallback
+                            null, // fieldNamePrefix
+                            null, // pageFieldName
+                            null, // selectionFieldName
+                            null, // sortFieldName
+                            null);// sortDirectionFieldName
 }
 
+<form method="post">
+    <div id="grid">
+        Nombre:
+        <input type="text" name="NombreCurso" value="@Request["Nombre"]" />
+        Direccion:
+        <input type="text" name="NombreCurso" value="@Request["Direccion"]" />
+       @* Gimnasio: 
+       <select name="NombreGimnasio">
+            <option></option>
+            @{
+                foreach (var item in ViewBag.NombresGimnasios)
+                {
+                <option @(Request["Nombre"] == item ? " selected=\"selected\"" : "")>@item</option>
+                }
+            }
+        </select>*@
+        <input type="submit" name="btnBuscar" value="Buscar" />
+    </div>
+
+    @grid.GetHtml(
+        tableStyle: "gridtable",
+        headerStyle: "gridtable-header",
+        alternatingRowStyle: "gridtable-alt",
+
+        columns: new[] {
+            grid.Column("IdGimnasio"),
+            grid.Column("Nombre", "Nombre"),
+            grid.Column("Direccion", "Direccion"),
+            grid.Column("",
+                header: "Acciones",
+                format: @<text>
+                             @Html.ActionLink("Edit", "Edit", new { id=item.IdGimnasio}) |
+                             @Html.ActionLink("Details", "Details", new { id=item.IdGimnasio }) |
+                             @Html.ActionLink("Delete", "Delete", new { id=item.IdGimnasio })
+                         </text>
+                )
+        })
+</form>
+
+@section scripts
+{
+    <script>
+
+        /* $(document).ready(function () {
+             alert('Nice');
+         });*/
+
+        $('#btnBuscar').click(function () {
+            var NombreVal = $('#NombreCurso').val();
+            var GymVal = $('#NombreGimnasio').val();
+
+            $.ajax({
+                url: '<%: Url.Action("Index")%>',
+                data: { 'Nombre': NombreVal, 'Gym': GymVal },
+                type: "post",
+                cache: false,
+                success: function (savingStatus) {
+                    //$("#hdnOrigComments").val($('#txtComments').val());
+                    //$('#lblCommentsNotification').text(savingStatus);
+                    $(document).alert('Nice');
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //$('#lblCommentsNotification').text("Error encountered while saving the comments.");
+                    $(document).alert('bad');
+                }
+            });
+        });
+    </script>
+}
+
+@*
 <h2>Index</h2>
 
 <p>
@@ -43,3 +127,4 @@
 }
 
 </table>
+*@

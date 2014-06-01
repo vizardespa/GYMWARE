@@ -6,7 +6,7 @@
     WebGrid grid = new WebGrid(Model, // source
                             null, // columnNames
                             null, // defaultSort
-                            3,   // rowsPerPage
+                            10,   // rowsPerPage
                             true, // canPage
                             true, // canSort
                             null, // ajaxUpdateContainerId
@@ -17,127 +17,79 @@
                             null, // sortFieldName
                             null);// sortDirectionFieldName
 }
-@*
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-
-        <title>@Page.Title</title>
-        <script src="@Href("~/scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
-
-        @RenderSection("script", required: false)
-    </head>
-
-    <body>
-        @RenderBody()
-    </body>
-</html>
-*@
-
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Producto", "Create")
 </p>
 
 <form method="post">
     <div id="grid">
-        Nombre: <input type="text" name="Nombre" value="@Request["Nombre"]" />
-        Marca:  <select name="country">
-                 <option></option>   
-            @foreach(var item in Model.Select(x=>x.Marca)){
-                <option @(Request["Nombre"] == item ? " selected=\"selected\"" : "")>@item</option>
+        Nombre:
+        <input type="text" name="Nombre" value="@Request["Nombre"]" />
+        Marca: 
+        <select name="Marca">
+            <option></option>
+            @{
+                foreach (var item in ViewBag.Marcas)
+                {
+                    <option @(Request["Nombre"] == item ? " selected=\"selected\"" : "")>@item</option>
+                }
             }
         </select>
-        <input type="submit" value="Buscar" />
+        <input type="submit" name="btnBuscar" value="Buscar" />
     </div>
 
     @grid.GetHtml(
         tableStyle: "gridtable",
         headerStyle: "gridtable-header",
         alternatingRowStyle: "gridtable-alt",
-    
-        columns: new [] {
+
+        columns: new[] {
             grid.Column("IdProducto"),
             grid.Column("Nombre", "Nombre"),
             grid.Column("Marca", "Marca"),
             grid.Column("Precio", "Precio"),
             grid.Column("Marca", "Marca"),
-            grid.Column("Activo",
-                header: "Activo",
-                format: @<text>
-                             @Html.DisplayNameFor(model => model.Activo)
-                         </text>
-                ),
+            grid.Column("Activo","Activo"),
             grid.Column("",
-                header: "Actions",
+                header: "Acciones",
                 format: @<text>
-                             @Html.ActionLink("Editar", "Edit", new {  id=item.IdProducto }) |
+    @Html.ActionLink("Editar", "Edit", new {  id=item.IdProducto }) |
                              @Html.ActionLink("Detalles", "Details", new { id=item.IdProducto }) |
                              @Html.ActionLink("Eliminar", "Delete", new { id=item.IdProducto  })
-                         </text>
+    </text>
                 )
         })
 </form>
 
-@*
-@section script{
-<script type="text/javascript">
-   $(function(){
-        $('th a, tfoot a').live('click', function() {
-            $('form').attr('action', $(this).attr('href')).submit();
-            return false;
+@section scripts
+{
+    <script>
+
+   /* $(document).ready(function () {
+        alert('Nice');
+    });*/
+
+    $('#btnBuscar').click(function () {
+        var NombreVal = $('#Nombre').val();
+        var MarcaVal = $('#Marca').val();
+
+        $.ajax({
+            url: '<%: Url.Action("Index")%>',
+            data: { 'Nombre': NombreVal, 'Marca': MarcaVal },
+            type: "post",
+            cache: false,
+            success: function (savingStatus) {
+                //$("#hdnOrigComments").val($('#txtComments').val());
+                //$('#lblCommentsNotification').text(savingStatus);
+                $(document).alert('Nice');
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                //$('#lblCommentsNotification').text("Error encountered while saving the comments.");
+                $(document).alert('bad');
+            }
         });
     });
 </script>
 }
-*@
-
-@*
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdProducto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Marca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Activo)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdProducto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Marca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Activo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new {  id=item.IdProducto }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.IdProducto }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdProducto  })
-        </td>
-    </tr>
-}
-
-</table>
-*@
