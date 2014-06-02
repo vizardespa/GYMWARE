@@ -28,7 +28,7 @@ namespace Gymware.Controllers
         {
             var curso = db.Curso.Include(c => c.Gimnasio);
             ViewBag.NombresGimnasios = db.Curso.Select(c => c.Gimnasio.Nombre).Distinct();
-            return View(curso.Select(c=>c).Where(c=>c.Nombre.ToUpper().Contains(NombreCurso.ToUpper())/*&&c.Gimnasio.Nombre.Contains(NombreGym ?? "")*/).ToList());
+            return View(curso.Select(c=>c).Where(c=>c.Nombre.ToUpper().Contains(NombreCurso.ToUpper()??"")/*&&c.Gimnasio.Nombre.Contains(NombreGym ?? "")*/).ToList());
         }
 
         //

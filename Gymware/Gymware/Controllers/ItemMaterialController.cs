@@ -22,6 +22,14 @@ namespace Gymware.Controllers
             return View(itemmaterial.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string Condicion)
+        {
+            var itemmaterial = db.ItemMaterial.Include(i => i.Material);
+            return View(itemmaterial.Select(x=>x).Where(x=>x.Condiciones.ToUpper().Contains(Condicion.ToUpper()??"")).ToList());
+        }
+
+
         //
         // GET: /ItemMaterial/Details/5
 

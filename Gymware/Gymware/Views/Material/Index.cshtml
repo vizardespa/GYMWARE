@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Gymware.Models.Promocion>
+﻿@model IEnumerable<Gymware.Models.Material>
 
 @{
     ViewBag.Title = "Index";
@@ -27,9 +27,9 @@
     <div id="grid">
         Nombre:
         <input type="text" name="Nombre" value="@Request["Nombre"]" />
-        Descuento:
-        <input type="text" name="Descuento" value="@Request["Descuento"]" />
-        @*Marca: 
+        Modelo:
+        <input type="text" name="Modelo" value="@Request["Modelo"]" />
+        Marca: 
         <select name="Marca">
             <option></option>
             @{
@@ -38,7 +38,7 @@
                     <option @(Request["Nombre"] == item ? " selected=\"selected\"" : "")>@item</option>
                 }
             }
-        </select>*@
+        </select>
         <input type="submit" name="btnBuscar" value="Buscar" />
     </div>
 
@@ -48,17 +48,18 @@
         alternatingRowStyle: "gridtable-alt",
 
         columns: new[] {
-            grid.Column("IdPromocion"),
+            grid.Column("IdMaterial"),
             grid.Column("Nombre", "Nombre"),
+            grid.Column("Modelo", "Modelo"),
+            grid.Column("Marca", "Marca"),
             grid.Column("Descripcion", "Descripcion"),
-            grid.Column("Descuento", "Descuento"),
             grid.Column("Activo","Activo"),
             grid.Column("",
                 header: "Acciones",
                 format: @<text>
-    @Html.ActionLink("Editar", "Edit", new {  id=item.IdPromocion }) |
-                             @Html.ActionLink("Detalles", "Details", new { id=item.IdPromocion }) |
-                             @Html.ActionLink("Eliminar", "Delete", new { id=item.IdPromocion  })
+    @Html.ActionLink("Editar", "Edit", new {  id=item.IdMaterial }) |
+                             @Html.ActionLink("Detalles", "Details", new { id=item.IdMaterial }) |
+                             @Html.ActionLink("Eliminar", "Delete", new { id=item.IdMaterial  })
     </text>
                 )
         })
@@ -74,11 +75,12 @@
 
     $('#btnBuscar').click(function () {
         var NombreVal = $('#Nombre').val();
-        var DescuentoVal = $('#Descuento').val();
+        var ModeloVal = $('#Modelo').val();
+        var MarcaVal = $('#Marca').val();
 
         $.ajax({
             url: '<%: Url.Action("Index")%>',
-            data: { 'Nombre': NombreVal, 'Marca': DescuentoVal },
+            data: { 'Nombre': NombreVal, 'Marca': MarcaVal },
             type: "post",
             cache: false,
             success: function (savingStatus) {
@@ -95,20 +97,24 @@
 </script>
 }
 
+
 @*
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IdPromocion)
+            @Html.DisplayNameFor(model => model.IdMaterial)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
+            @Html.DisplayNameFor(model => model.Modelo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Descuento)
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Activo)
@@ -119,16 +125,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdPromocion)
+            @Html.DisplayFor(modelItem => item.IdMaterial)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
+            @Html.DisplayFor(modelItem => item.Modelo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Descuento)
+            @Html.DisplayFor(modelItem => item.Marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Activo)

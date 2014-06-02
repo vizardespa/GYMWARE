@@ -22,6 +22,13 @@ namespace Gymware.Controllers
             return View(membresia.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string Nombre, string Fecha)
+        {
+            var membresia = db.Membresia.Include(m => m.Gimnasio);
+            return View(membresia.ToList());
+        }
+
         //
         // GET: /Membresia/Details/5
 

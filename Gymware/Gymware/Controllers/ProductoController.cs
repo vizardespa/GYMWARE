@@ -26,7 +26,7 @@ namespace Gymware.Controllers
         public ActionResult Index(string Nombre,string Marca)
         {
             ViewBag.Marcas = db.Producto.Select(p => p.Marca).ToList();
-            return View(db.Producto.Select(p=>p).Where(p=>p.Marca.ToUpper().Contains(Marca.ToUpper())&&p.Nombre.ToUpper().Contains(Nombre.ToUpper())));
+            return View(db.Producto.Select(p=>p).Where(p=>p.Marca.ToUpper().Contains(Marca.ToUpper()??"")&&p.Nombre.ToUpper().Contains(Nombre.ToUpper()??"")));
         }
 
         //

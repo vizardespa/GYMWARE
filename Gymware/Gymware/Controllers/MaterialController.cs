@@ -9,38 +9,41 @@ using Gymware.Models;
 
 namespace Gymware.Controllers
 {
-    public class PromocionController : Controller
+    public class MaterialController : Controller
     {
         private GimnasioEntities db = new GimnasioEntities();
 
         //
-        // GET: /Promocion/
+        // GET: /Material/
 
         public ActionResult Index()
         {
-            return View(db.Promocion.ToList());
+            ViewBag.Marcas = db.Material.Select(x => x.Marca).Distinct();
+            return View(db.Material.ToList());
         }
 
         [HttpPost]
-        public ActionResult Index(string Nombre, string Descuento )
+        public ActionResult Index(string Nombre, string Modelo, string Marca)
         {
-            return View(db.Promocion.Select(x=>x).Where(x=>x.Nombre.ToUpper().Contains(Nombre.ToUpper()??"")).ToList());
+            ViewBag.Marcas = db.Material.Select(x => x.Marca).Distinct();
+            return View(db.Material.Select(x=>x).Where(x=>x.Nombre.ToUpper().Contains(Nombre.ToUpper()??"")&&x.Modelo.ToUpper().Contains(Modelo.ToUpper()??"")&&
+                x.Marca.ToUpper().Contains(Marca.ToUpper()??"")).ToList());
         }
         //
-        // GET: /Promocion/Details/5
+        // GET: /Material/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Promocion promocion = db.Promocion.Find(id);
-            if (promocion == null)
+            Material material = db.Material.Find(id);
+            if (material == null)
             {
                 return HttpNotFound();
             }
-            return View(promocion);
+            return View(material);
         }
 
         //
-        // GET: /Promocion/Create
+        // GET: /Material/Create
 
         public ActionResult Create()
         {
@@ -48,70 +51,70 @@ namespace Gymware.Controllers
         }
 
         //
-        // POST: /Promocion/Create
+        // POST: /Material/Create
 
         [HttpPost]
-        public ActionResult Create(Promocion promocion)
+        public ActionResult Create(Material material)
         {
             if (ModelState.IsValid)
             {
-                db.Promocion.Add(promocion);
+                db.Material.Add(material);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(promocion);
+            return View(material);
         }
 
         //
-        // GET: /Promocion/Edit/5
+        // GET: /Material/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Promocion promocion = db.Promocion.Find(id);
-            if (promocion == null)
+            Material material = db.Material.Find(id);
+            if (material == null)
             {
                 return HttpNotFound();
             }
-            return View(promocion);
+            return View(material);
         }
 
         //
-        // POST: /Promocion/Edit/5
+        // POST: /Material/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Promocion promocion)
+        public ActionResult Edit(Material material)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(promocion).State = EntityState.Modified;
+                db.Entry(material).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(promocion);
+            return View(material);
         }
 
         //
-        // GET: /Promocion/Delete/5
+        // GET: /Material/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Promocion promocion = db.Promocion.Find(id);
-            if (promocion == null)
+            Material material = db.Material.Find(id);
+            if (material == null)
             {
                 return HttpNotFound();
             }
-            return View(promocion);
+            return View(material);
         }
 
         //
-        // POST: /Promocion/Delete/5
+        // POST: /Material/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Promocion promocion = db.Promocion.Find(id);
-            db.Promocion.Remove(promocion);
+            Material material = db.Material.Find(id);
+            db.Material.Remove(material);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

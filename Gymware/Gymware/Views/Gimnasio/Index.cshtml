@@ -20,9 +20,9 @@
 <form method="post">
     <div id="grid">
         Nombre:
-        <input type="text" name="NombreCurso" value="@Request["Nombre"]" />
+        <input type="text" name="NombreGimnasio" value="@Request["Nombre"]" />
         Direccion:
-        <input type="text" name="NombreCurso" value="@Request["Direccion"]" />
+        <input type="text" name="Direccion" value="@Request["Direccion"]" />
        @* Gimnasio: 
        <select name="NombreGimnasio">
             <option></option>
@@ -65,12 +65,12 @@
          });*/
 
         $('#btnBuscar').click(function () {
-            var NombreVal = $('#NombreCurso').val();
-            var GymVal = $('#NombreGimnasio').val();
+            var NombreVal = $('#NombreGimnasio').val();
+            var DirVal = $('#Direccion').val();
 
             $.ajax({
                 url: '<%: Url.Action("Index")%>',
-                data: { 'Nombre': NombreVal, 'Gym': GymVal },
+                data: { 'Nombre': NombreVal, 'Gym': DirVal },
                 type: "post",
                 cache: false,
                 success: function (savingStatus) {

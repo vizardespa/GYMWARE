@@ -21,6 +21,14 @@ namespace Gymware.Controllers
             return View(db.Gimnasio.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string Nombre, string Direccion)
+        {
+
+            return View(db.Gimnasio.Select(x=>x).Where(x=>x.Nombre.ToUpper().Contains(Nombre.ToUpper()??"")&&x.Direccion.ToUpper().Contains(Direccion.ToUpper()??"")).ToList());
+        }
+
+        
         //
         // GET: /Gimnasio/Details/5
 
