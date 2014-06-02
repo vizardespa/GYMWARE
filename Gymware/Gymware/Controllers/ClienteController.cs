@@ -19,6 +19,7 @@ namespace Gymware.Controllers
         public ActionResult Index()
         {
             var cliente = db.Cliente.Include(c => c.Gimnasio);
+            ViewBag.NombresGimnasios = db.Curso.Select(c => c.Gimnasio.Nombre).Distinct();
             return View(cliente.ToList());
         }
 
