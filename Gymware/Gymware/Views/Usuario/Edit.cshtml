@@ -1,7 +1,7 @@
 ﻿@model Gymware.Models.Usuario
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Usuario";
 }
 
 <h2>Edit</h2>
@@ -11,14 +11,14 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Usuario</legend>
-        <div class="editor-label">
+        <legend>Editar Usuario</legend>
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.IdGimnasio, "Gimnasio")
         </div>
         <div class="editor-field">
             @Html.DropDownList("IdGimnasio", String.Empty)
             @Html.ValidationMessageFor(model => model.IdGimnasio)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.IdEntrenador, "Entrenador")
@@ -83,7 +83,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar a la lista", "Index")
 </div>
 
 @section Scripts {

@@ -1,7 +1,7 @@
 ﻿@model Gymware.Models.Promocion
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Promocion";
 }
 
 <h2>Edit</h2>
@@ -10,7 +10,7 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Promocion</legend>
+        <legend>Editar Promocion</legend>
 
         @*<div class="editor-label">
             @Html.LabelFor(model => model.IdPromocion)
@@ -59,7 +59,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar a la lista", "Index")
 </div>
 
 @section Scripts {

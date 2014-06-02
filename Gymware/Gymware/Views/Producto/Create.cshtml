@@ -1,16 +1,16 @@
 ﻿@model Gymware.Models.Producto
 
 @{
-    ViewBag.Title = "Crear";
+    ViewBag.Title = "Crear Producto";
 }
 
-<h2>Create</h2>
+<h2>Crear Producto</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Producto</legend>
+        <legend>Crear Producto</legend>
 
         @*<div class="editor-label">
             @Html.LabelFor(model => model.IdProducto)
@@ -60,7 +60,7 @@
 }
 
 <div>
-    @Html.ActionLink("Volver a la lista", "Index")
+    @Html.ActionLink("Regresar a la lista", "Index")
 </div>
 
 @section Scripts {

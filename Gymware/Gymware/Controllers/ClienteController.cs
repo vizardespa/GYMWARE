@@ -22,6 +22,13 @@ namespace Gymware.Controllers
             return View(cliente.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string NombreCliente, string NombreGym)
+        {
+            var cliente = db.Cliente.Include(c => c.Gimnasio);
+            ViewBag.NombresGimnasios = db.Curso.Select(c => c.Gimnasio.Nombre).Distinct();
+            return View(cliente.Select(c => c).Where(c => c.Nombre.ToUpper().Contains(NombreCliente.ToUpper() ?? "")/*&&c.Gimnasio.Nombre.Contains(NombreGym ?? "")*/).ToList());
+        }
         //
         // GET: /Cliente/Details/5
 
