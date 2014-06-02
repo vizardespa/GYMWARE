@@ -1,8 +1,8 @@
 ﻿@if (Request.IsAuthenticated) {
      <text>
          @*Hola, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!*@
-         Hola, @User.Identity.Name
-         <li><a href="@Url.RouteUrl(new {Controller = "Usuario", Action = "Logout"})">Cerrar sesión </a></li>
+         @*Hola, @User.Identity.Name*@
+         <li><a href="@Url.RouteUrl(new {Controller = "Usuario", Action = "Logout"})">Cerrar sesión de @User.Identity.Name </a></li>
      </text>
  } 
  else {
