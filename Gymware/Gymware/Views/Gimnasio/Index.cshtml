@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Gymware.Models.Gimnasio>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio Gimnasio";
         WebGrid grid = new WebGrid(Model, // source
                             null, // columnNames
                             null, // defaultSort
@@ -16,6 +16,11 @@
                             null, // sortFieldName
                             null);// sortDirectionFieldName
 }
+
+<h2>Inicio Gimnasio</h2>
+<p>
+    @Html.ActionLink("Agregar Gimnasio", "Create")
+</p>
 
 <form method="post">
     <div id="grid">
@@ -48,9 +53,9 @@
             grid.Column("",
                 header: "Acciones",
                 format: @<text>
-                             @Html.ActionLink("Edit", "Edit", new { id=item.IdGimnasio}) |
-                             @Html.ActionLink("Details", "Details", new { id=item.IdGimnasio }) |
-                             @Html.ActionLink("Delete", "Delete", new { id=item.IdGimnasio })
+                             @Html.ActionLink("Editar", "Edit", new { id=item.IdGimnasio}) |
+                             @Html.ActionLink("Detalles", "Details", new { id=item.IdGimnasio }) |
+                             @Html.ActionLink("Eliminar", "Delete", new { id=item.IdGimnasio })
                          </text>
                 )
         })
@@ -88,11 +93,9 @@
 }
 
 @*
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+
 <table>
     <tr>
         <th>

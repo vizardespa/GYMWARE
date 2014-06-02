@@ -2,7 +2,7 @@
 @model IEnumerable<Gymware.Models.Curso>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio Curso";
     WebGrid grid = new WebGrid(Model, // source
                             null, // columnNames
                             null, // defaultSort
@@ -21,7 +21,7 @@
 
 
 
-<h2>Index</h2>
+<h2>Inicio Curso</h2>
 
 <p>
     @Html.ActionLink("Agregar Curso", "Create")
@@ -32,12 +32,12 @@
         Nombre Curso:
         <input type="text" name="NombreCurso" value="@Request["Nombre"]" />
         Gimnasio: 
-       <select name="NombreGimnasio">
+        <select name="NombreGimnasio">
             <option></option>
             @{
                 foreach (var item in ViewBag.NombresGimnasios)
                 {
-                <option @(Request["Nombre"] == item ? " selected=\"selected\"" : "")>@item</option>
+                    <option @(Request["Nombre"] == item ? " selected=\"selected\"" : "")>@item</option>
                 }
             }
         </select>
@@ -51,7 +51,12 @@
 
         columns: new[] {
             grid.Column("IdCurso"),
-            grid.Column("IdGimnasio", "Nombre Gimnasio"),
+            grid.Column("IdGimnasio", 
+            "Nombre Gimnasio",
+                format: @<text>
+                             @Html.Raw(item.Gimnasio.Nombre)
+                         </text>
+            ),
             grid.Column("Nombre", "Nombre"),
             grid.Column("Precio", "Precio"),
             grid.Column("Descripcion", "Descripcion"),
@@ -59,9 +64,9 @@
             grid.Column("",
                 header: "Acciones",
                 format: @<text>
-                             @Html.ActionLink("Edit", "Edit", new { id=item.IdCurso}) |
-                             @Html.ActionLink("Details", "Details", new { id=item.IdCurso }) |
-                             @Html.ActionLink("Delete", "Delete", new { id=item.IdCurso })
+                             @Html.ActionLink("Editar", "Edit", new { id=item.IdCurso}) |
+                             @Html.ActionLink("Detalles", "Details", new { id=item.IdCurso }) |
+                             @Html.ActionLink("Eliminar", "Delete", new { id=item.IdCurso })
                          </text>
                 )
         })

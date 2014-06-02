@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Gymware.Models.Material>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio Material";
     WebGrid grid = new WebGrid(Model, // source
                            null, // columnNames
                            null, // defaultSort
@@ -17,10 +17,10 @@
                            null);// sortDirectionFieldName
 }
 
-<h2>Index</h2>
+<h2>Inicio Material</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Material", "Create")
 </p>
 
 <form method="post">

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Gymware.Models.Cliente>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio Cliente";
     WebGrid grid = new WebGrid(Model, // source
                            null, // columnNames
                            null, // defaultSort
@@ -17,10 +17,10 @@
                            null);// sortDirectionFieldName
 }
 
-<h2>Index</h2>
+<h2>Inicio Cliente</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Cliente", "Create")
 </p>
  
 <form method="post">

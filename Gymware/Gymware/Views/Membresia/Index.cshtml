@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Gymware.Models.Membresia>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio Membresia";
     WebGrid grid = new WebGrid(Model, // source
                             null, // columnNames
                             null, // defaultSort
@@ -16,12 +16,10 @@
                             null, // sortFieldName
                             null);// sortDirectionFieldName
 }
-}
-
-<h2>Index</h2>
+<h2>Inicio Membresia</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Membresia", "Create")
 </p>
 
 <form method="post">
