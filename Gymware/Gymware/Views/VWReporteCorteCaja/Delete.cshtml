@@ -1,0 +1,61 @@
+﻿@model Gymware.Models.VW_ReporteCorteCaja
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>VW_ReporteCorteCaja</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gimnasio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gimnasio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Vendedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vendedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comprador)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comprador)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Utilidad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Utilidad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaCompraVenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaCompraVenta)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

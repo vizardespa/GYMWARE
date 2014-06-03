@@ -1,0 +1,57 @@
+﻿@model Gymware.Models.VW_ReporteCorteCaja
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>VW_ReporteCorteCaja</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gimnasio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gimnasio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Vendedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vendedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comprador)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comprador)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Utilidad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Utilidad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaCompraVenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaCompraVenta)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

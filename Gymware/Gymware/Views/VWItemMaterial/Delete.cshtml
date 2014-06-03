@@ -1,0 +1,54 @@
+﻿@model Gymware.Models.VW_ItemMaterial
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>VW_ItemMaterial</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Marca)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Marca)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modelo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modelo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Condiciones)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Condiciones)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

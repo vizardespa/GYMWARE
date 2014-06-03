@@ -175,6 +175,7 @@
     <Compile Include="Controllers\PromocionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VWItemMaterialController.cs" />
+    <Compile Include="Controllers\VWReporteCorteCajaController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -310,6 +311,9 @@
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VW_RelMembresiaCurso.cs">
+      <DependentUpon>GYMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ReporteCorteCaja.cs">
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VW_Usuario.cs">
@@ -501,6 +505,11 @@
     <Content Include="Views\VWItemMaterial\Create.cshtml" />
     <Content Include="Views\VWItemMaterial\Edit.cshtml" />
     <Content Include="Views\VWItemMaterial\Delete.cshtml" />
+    <Content Include="Views\VWReporteCorteCaja\Index.cshtml" />
+    <Content Include="Views\VWReporteCorteCaja\Details.cshtml" />
+    <Content Include="Views\VWReporteCorteCaja\Create.cshtml" />
+    <Content Include="Views\VWReporteCorteCaja\Edit.cshtml" />
+    <Content Include="Views\VWReporteCorteCaja\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
