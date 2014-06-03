@@ -174,6 +174,7 @@
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\PromocionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VWItemMaterialController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +292,9 @@
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VW_Inventario.cs">
+      <DependentUpon>GYMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ItemMaterial.cs">
       <DependentUpon>GYMDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VW_Material.cs">
@@ -492,6 +496,11 @@
     <Content Include="Views\Material\Create.cshtml" />
     <Content Include="Views\Material\Edit.cshtml" />
     <Content Include="Views\Material\Delete.cshtml" />
+    <Content Include="Views\VWItemMaterial\Index.cshtml" />
+    <Content Include="Views\VWItemMaterial\Details.cshtml" />
+    <Content Include="Views\VWItemMaterial\Create.cshtml" />
+    <Content Include="Views\VWItemMaterial\Edit.cshtml" />
+    <Content Include="Views\VWItemMaterial\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,19 +6,25 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Editar Usuario</legend>
-        @*<div class="editor-label">
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.IdUsuario)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.IdGimnasio, "Gimnasio")
         </div>
+
         <div class="editor-field">
             @Html.DropDownList("IdGimnasio", String.Empty)
             @Html.ValidationMessageFor(model => model.IdGimnasio)
-        </div>*@
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.IdEntrenador, "Entrenador")
@@ -28,21 +34,29 @@
             @Html.ValidationMessageFor(model => model.IdEntrenador)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Nombre)
-        </div>
+
         <div class="editor-field">
-            @Html.EditorFor(model => model.Nombre)
-            @Html.ValidationMessageFor(model => model.Nombre)
+            @Html.HiddenFor(model => model.Nombre)
+        </div>
+        @*<div class="editor-label">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre)
+            </div>*@
+        
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.NombreUsuario)
         </div>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.NombreUsuario, "Nombre de Usuario")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.NombreUsuario)
             @Html.ValidationMessageFor(model => model.NombreUsuario)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Contraseña)

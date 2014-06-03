@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Gymware.Models.Material>
+﻿@using Gymware.Models
+@model IEnumerable<Gymware.Models.Material>
 
 @{
     ViewBag.Title = "Inicio Material";
@@ -21,6 +22,7 @@
 
 <p>
     @Html.ActionLink("Agregar Material", "Create")
+    @Html.ActionLink("Reporte de Equipo", "Index", "VWItemMaterial")
 </p>
 
 <form method="post">
