@@ -45,8 +45,12 @@
         alternatingRowStyle: "gridtable-alt",
 
         columns: new[] {
-            grid.Column("IdTipoMaterial"),
-            grid.Column("IdMaterial", "IdMaterial"),
+            grid.Column("IdItemMaterial"),
+            grid.Column("IdMaterial", "Nombre Material",
+            format: @<text>
+                             @Html.Raw(item.Material.Nombre)
+                         </text>
+            ),
             grid.Column("Condiciones", "Condiciones"),
             grid.Column("",
                 header: "Acciones",

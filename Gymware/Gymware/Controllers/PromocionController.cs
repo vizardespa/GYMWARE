@@ -22,9 +22,13 @@ namespace Gymware.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string Nombre, string Descuento )
+        public ActionResult Index(string Nombre, string Descuento)
         {
-            return View(db.Promocion.Select(x=>x).Where(x=>x.Nombre.ToUpper().Contains(Nombre.ToUpper()??"")).ToList());
+            int des = 0;
+            if (int.TryParse(Descuento, out des))
+                return View(db.Promocion.Select(x => x).Where(x => x.Nombre.Contains(Nombre)&&x.Descuento==des).ToList());
+            else
+                return View(db.Promocion.Select(x => x).Where(x => x.Nombre.Contains(Nombre)).ToList());
         }
         //
         // GET: /Promocion/Details/5

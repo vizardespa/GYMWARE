@@ -12,12 +12,12 @@
     <fieldset>
         <legend>Editar Material</legend>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.IdMaterial)
-        </div>
+        </div>*@
         <div class="editor-field">
-            @Html.EditorFor(model => model.IdMaterial)
-            @Html.ValidationMessageFor(model => model.IdMaterial)
+            @Html.HiddenFor(model => model.IdMaterial)
+           @*@Html.ValidationMessageFor(model => model.IdMaterial)*@
         </div>
 
         <div class="editor-label">

@@ -14,11 +14,11 @@
 
         @*<div class="editor-label">
             @Html.LabelFor(model => model.IdMembresia)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IdMembresia)
-            @Html.ValidationMessageFor(model => model.IdMembresia)
         </div>*@
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.IdMembresia)
+           @* @Html.ValidationMessageFor(model => model.IdMembresia)*@
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.IdGimnasio, "Gimnasio")

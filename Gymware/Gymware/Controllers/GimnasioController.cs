@@ -25,7 +25,8 @@ namespace Gymware.Controllers
         public ActionResult Index(string Nombre, string Direccion)
         {
 
-            return View(db.Gimnasio.Select(x=>x).Where(x=>x.Nombre.ToUpper().Contains(Nombre.ToUpper()??"")&&x.Direccion.ToUpper().Contains(Direccion.ToUpper()??"")).ToList());
+            return View(db.Gimnasio.Select(x=>x).Where(x=>x.Nombre.Contains(Nombre)&&
+                x.Direccion.Contains(Direccion)).ToList());
         }
 
         

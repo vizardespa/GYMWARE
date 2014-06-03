@@ -28,20 +28,7 @@ namespace Gymware.Controllers
         {
             var curso = db.Curso.Include(c => c.Gimnasio);
             ViewBag.NombresGimnasios = db.Curso.Select(c => c.Gimnasio.Nombre).Distinct();
-           /* int IdGym = 0;
-            if (NombreGym != null && NombreGym != "0")
-            {
-                IdGym = int.Parse(NombreGym);
-                return View(curso.Select(c => c).Where(c => c.Nombre.ToUpper().Contains(NombreCurso.ToUpper() ?? "")&&c.Gimnasio.Nombre.Contains(NombreGym ?? "")).ToList());
-            }*/
-            return View(curso.Select(c => c).Where(c => c.Nombre.ToUpper().Contains(NombreCurso.ToUpper() ?? "") && c.Gimnasio.Nombre.Contains(NombreGym ?? "")).ToList());
-            /*
-             return View(curso.Select(c => c).Where
-                (c => NombreGym != null ? 
-                (NombreGym !="0" ?
-                (c.Nombre.ToUpper().Contains(NombreCurso.ToUpper() ?? "") && c.IdGimnasio == (int.Parse(NombreGym))) : (c.Nombre.ToUpper().Contains(NombreCurso.ToUpper() ?? "")))
-                : c.Nombre.ToUpper().Contains(NombreCurso.ToUpper() ?? "")).ToList());
-             */
+            return View(curso.Select(c => c).Where(c => c.Nombre.Contains(NombreCurso)/* && c.Gimnasio.Nombre.Contains(NombreGym)*/).ToList());
         }
 
         //

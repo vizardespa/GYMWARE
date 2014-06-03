@@ -26,7 +26,7 @@ namespace Gymware.Controllers
         public ActionResult Index(string Nombre, string Fecha)
         {
             var membresia = db.Membresia.Include(m => m.Gimnasio);
-            return View(membresia.ToList());
+            return View(membresia.Select(x=>x).Where(x=>x.Nombre.Contains(Nombre)).ToList());
         }
 
         //

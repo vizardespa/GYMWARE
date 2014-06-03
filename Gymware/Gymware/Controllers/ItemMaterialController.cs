@@ -26,7 +26,7 @@ namespace Gymware.Controllers
         public ActionResult Index(string Condicion)
         {
             var itemmaterial = db.ItemMaterial.Include(i => i.Material);
-            return View(itemmaterial.Select(x=>x).Where(x=>x.Condiciones.ToUpper().Contains(Condicion.ToUpper()??"")).ToList());
+            return View(itemmaterial.Select(x=>x).Where(x=>x.Condiciones.Contains(Condicion)).ToList());
         }
 
 
