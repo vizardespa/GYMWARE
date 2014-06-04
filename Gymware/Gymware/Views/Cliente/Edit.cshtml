@@ -59,6 +59,40 @@
             @Html.EditorFor(model => model.Activo)
             @Html.ValidationMessageFor(model => model.Activo)
         </div>
+        
+        @*<div class="editor-label">
+           <h3>Membresias</h3>
+        </div>
+        <div class="editor-field">
+            @Html.Raw("Membresias Disponibles:")
+            <select name="MembresiaDis">
+                <option></option>
+                @{
+                    foreach (var item in ViewBag.MembresiasDis)
+                    {
+                        <option>@item.Nombre</option>
+                    }
+                }
+            </select>
+            <input type="button" id ="btnAgregarMembresia" name="btnAgregar" value="Agregar" />
+        </div>
+        <div class="editor-field">
+            @Html.Raw("Membresias Adjuntas:")
+            <select name="MembresiaAdj">
+                <option></option>
+                @{
+                    foreach (var i in ViewBag.MembresiasAdj)
+                    {
+                        if (i.IdCliente != Model.IdCliente)
+                        {
+                            continue;
+                        }
+                        <option>@i.Membresia</option>
+                    }
+                }
+            </select>
+            <input type="button" id="btnEliminarMembresia" name ="btnEliminar" value="Eliminar" />
+        </div>*@
 
         <p>
             <input type="submit" value="Guardar" />
@@ -72,4 +106,25 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+   @* <script>
+        $('#btnAgregar').click(function () {
+            $.ajax(
+        {
+            url: "/yourcontrollermethod/GetStatesByCountry",
+            type: 'POST',
+            data: { CountryID: $(this).val() },
+            datatype: 'json',
+            success: function (data) {
+                var elements = "";
+                $.each(data, function () {
+                    elements = elements + '<option values="' + this.id + '">' + this.state + '</option>'
+                })
+                $('#ddlState').empty().append(elements);
+            }
+        });
+        });
+        $('#btnEliminar').click(function () {
+
+        });
+    </script>*@
 }

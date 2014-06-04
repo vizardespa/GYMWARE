@@ -6,7 +6,8 @@
 
 <h2>Crear Cliente</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -60,8 +61,32 @@
             @Html.ValidationMessageFor(model => model.Activo)
         </div>
 
+        @*<div class="editor-label">
+           <h3>Membresias</h3>
+        </div>
+        <div class="editor-field">
+            @Html.Raw("Membresias Disponibles:")
+            <select name="MembresiaDis">
+                <option></option>
+                @{
+                    foreach (var item in ViewBag.MembresiasDis)
+                    {
+                        <option>@item.Nombre</option>
+                    }
+                }
+            </select>
+            <input type="button" id ="btnAgregarMembresia" name="btnAgregar" value="Agregar" />
+        </div>
+        <div class="editor-field">
+            @Html.Raw("Membresias Adjuntas:")
+            <select name="MembresiaAdj">
+                <option></option>
+            </select>
+            <input type="button" id="btnEliminarMembresia" name ="btnEliminar" value="Eliminar" />
+        </div>
+        *@
         <p>
-             <input type="submit" value="Crear" />
+            <input type="submit" value="Crear" />
         </p>
     </fieldset>
 }

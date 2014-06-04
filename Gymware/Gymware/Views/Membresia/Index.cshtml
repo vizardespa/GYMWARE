@@ -49,7 +49,12 @@
 
         columns: new[] {
             grid.Column("IdMembresia"),
-            grid.Column("IdGimnasio", "Nombre Gimnasio"),
+           grid.Column("IdGimnasio", 
+            "Nombre Gimnasio",
+                format: @<text>
+                             @Html.Raw(item.Gimnasio.Nombre)
+                         </text>
+            ),
             grid.Column("Nombre", "Nombre"),
             grid.Column("Descripcion", "Descripcion"),
             grid.Column("Fechavencimiento", "Fecha Vencimiento"),

@@ -1,63 +1,64 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-    <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta charset="utf-8" />
-        <title>GYMWARE - @ViewBag.Title </title>
-        <link href="~/logoGym.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    @*<p class="site-title">@Html.ActionLink("su logotipo aquí", "Index", "Home")</p>*@
-                    <a href="@Url.Action("Index", "Home")">
-                        <img id="logo" src="~/LOGO banner.png" width="800px" height="80px"/>
-                    </a>
-</div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            @*<li>@Html.ActionLink("Inicio", "Index", "Home")</li>*@
-                            <li>@Html.ActionLink("Gimnasio","Index","Gimnasio")</li>
-                            <li>@Html.ActionLink("Cliente", "Index", "Cliente")</li>
-                            <li>@Html.ActionLink("Material", "Index", "Material")</li>
-                            <li>@Html.ActionLink("Estado de Material", "Index", "ItemMaterial")</li>
-                            <li>@Html.ActionLink("Membresía","Index","Membresia")</li>
-                            <li>@Html.ActionLink("Producto", "Index", "Producto")</li>
-                            <li>@Html.ActionLink("Promoción","Index","Promocion")</li>
-                            <li>@Html.ActionLink("Curso","Index","Curso")</li>
-                            <br/>
-                            <center>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>GYMWARE - @ViewBag.Title </title>
+    <link href="~/logoGym.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                @*<p class="site-title">@Html.ActionLink("su logotipo aquí", "Index", "Home")</p>*@
+                <a href="@Url.Action("Index", "Home")">
+                    <img id="logo" src="~/LOGO banner.png" width="800px" height="80px" />
+                </a>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+                <nav>
+                    <ul id="menu">
+                        @*<li>@Html.ActionLink("Inicio", "Index", "Home")</li>*@
+                        <li>@Html.ActionLink("Gimnasio", "Index", "Gimnasio")</li>
+                        <li>@Html.ActionLink("Cliente", "Index", "Cliente")</li>
+                        <li>@Html.ActionLink("Material", "Index", "Material")</li>
+                        <li>@Html.ActionLink("Estado de Material", "Index", "ItemMaterial")</li>
+                        <li>@Html.ActionLink("Membresía", "Index", "Membresia")</li>
+                        <li>@Html.ActionLink("Producto", "Index", "Producto")</li>
+                        <li>@Html.ActionLink("Promoción", "Index", "Promocion")</li>
+                        <li>@Html.ActionLink("Curso", "Index", "Curso")</li>
+                        <br />
+                        <center>
                                 <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                                 <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                             </center>
-                        </ul>
-                    </nav>
-                </div>
+                    </ul>
+                </nav>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; CETYS Universidad - @DateTime.Now.Year </p>
-                </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; CETYS Universidad - @DateTime.Now.Year </p>
             </div>
-        </footer>
-
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+        </div>
+    </footer>
+    <link href="@Url.Content("~/Content/fullcalendar.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/fullcalendar.js")" type="text/javascript"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
 </html>

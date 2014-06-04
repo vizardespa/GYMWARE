@@ -1,0 +1,57 @@
+﻿@model Gymware.Models.Horario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Horario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdHorario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdHorario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Membresia.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Membresia.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Curso.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Curso.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Dia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HoraEntrada)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoraEntrada)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HoraSalida)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoraSalida)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

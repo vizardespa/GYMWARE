@@ -38,6 +38,23 @@ namespace Gymware
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/calendar").Include(
+                        #if DEBUG
+
+                            "~/Scripts/fullcalendar.js"
+
+                        #else
+
+                            "~/Scripts/fullcalendar.min.js”
+
+                        #endif
+));
+            bundles.Add(new StyleBundle("~/Content/calendar").Include(
+                        "~/Content/fullcalendar.css",
+                        "~/Content/fullcalendar.print.css"
+));
+
         }
     }
 }

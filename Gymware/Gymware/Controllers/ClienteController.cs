@@ -28,7 +28,7 @@ namespace Gymware.Controllers
         {
             var cliente = db.Cliente.Include(c => c.Gimnasio);
             ViewBag.NombresGimnasios = db.Curso.Select(c => c.Gimnasio.Nombre).Distinct();
-            return View(cliente.Select(c => c).Where(c => c.Nombre.Contains(NombreCliente)/*&&c.Gimnasio.Nombre.Contains(NombreGym ?? "")*/).ToList());
+            return View(cliente.Select(c => c).Where(c => c.Nombre.Contains(NombreCliente)/*&&c.Gimnasio.Nombre.Contains(NombreGym)*/).ToList());
         }
         //
         // GET: /Cliente/Details/5
@@ -49,6 +49,7 @@ namespace Gymware.Controllers
         public ActionResult Create()
         {
             ViewBag.IdGimnasio = new SelectList(db.Gimnasio, "IdGimnasio", "Nombre");
+            ViewBag.MembresiasDis = db.Membresia;
             return View();
         }
 
@@ -64,7 +65,6 @@ namespace Gymware.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.IdGimnasio = new SelectList(db.Gimnasio, "IdGimnasio", "Nombre", cliente.IdGimnasio);
             return View(cliente);
         }
@@ -80,6 +80,8 @@ namespace Gymware.Controllers
                 return HttpNotFound();
             }
             ViewBag.IdGimnasio = new SelectList(db.Gimnasio, "IdGimnasio", "Nombre", cliente.IdGimnasio);
+            ViewBag.MembresiasDis = db.Membresia;
+            ViewBag.MembresiasAdj = db.VW_RelMembresiaCliente;
             return View(cliente);
         }
 
@@ -95,6 +97,8 @@ namespace Gymware.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MembresiasDis = db.Membresia;
+            ViewBag.MembresiasAdj = db.VW_Membresia;
             ViewBag.IdGimnasio = new SelectList(db.Gimnasio, "IdGimnasio", "Nombre", cliente.IdGimnasio);
             return View(cliente);
         }
@@ -129,5 +133,7 @@ namespace Gymware.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+
     }
 }
