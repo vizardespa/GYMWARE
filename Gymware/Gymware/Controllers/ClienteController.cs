@@ -9,6 +9,7 @@ using Gymware.Models;
 
 namespace Gymware.Controllers
 {
+    [Authorize]
     public class ClienteController : Controller
     {
         private GimnasioEntities db = new GimnasioEntities();

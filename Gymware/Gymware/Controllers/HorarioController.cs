@@ -9,6 +9,7 @@ using Gymware.Models;
 
 namespace Gymware.Controllers
 {
+    [Authorize]
     public class HorarioController : Controller
     {
         private GimnasioEntities db = new GimnasioEntities();
@@ -169,6 +170,7 @@ namespace Gymware.Controllers
             //return the total seconds (which is a UNIX timestamp)
             return (double)span.TotalSeconds;
         } 
+
 
 
 

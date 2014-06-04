@@ -9,6 +9,7 @@ using Gymware.Models;
 
 namespace Gymware.Controllers
 {
+    [Authorize]
     public class PromocionController : Controller
     {
         private GimnasioEntities db = new GimnasioEntities();

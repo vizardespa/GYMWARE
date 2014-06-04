@@ -166,6 +166,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
+    <Compile Include="Controllers\EntrenadorController.cs" />
     <Compile Include="Controllers\GimnasioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HorarioController.cs" />
@@ -421,6 +422,7 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\lang-all.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="timmyDadHorario.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -522,6 +524,11 @@
     <Content Include="Views\Horario\Create.cshtml" />
     <Content Include="Views\Horario\Edit.cshtml" />
     <Content Include="Views\Horario\Delete.cshtml" />
+    <Content Include="Views\Entrenador\Index.cshtml" />
+    <Content Include="Views\Entrenador\Details.cshtml" />
+    <Content Include="Views\Entrenador\Create.cshtml" />
+    <Content Include="Views\Entrenador\Edit.cshtml" />
+    <Content Include="Views\Entrenador\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

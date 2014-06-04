@@ -11,9 +11,9 @@
 @section scripts
 {
     <script>
-        $(document).ready(function() {
-            alert("HOLA");
-        });
+        //$(document).ready(function() {
+        //    alert("HOLA");
+        //});
         $("#calendar").fullCalendar({
             theme: true,
             header: {
@@ -24,8 +24,13 @@
             editable: false,
             events: "/Calendar/GetEvents/"
         });
+
+
     </script>
 }
+
+<img id="logo" src="~/timmyDadHorario.jpg" width="600px" height="600px" />
+
 @*
 <p>
     @Html.ActionLink("Create New", "Create")

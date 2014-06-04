@@ -9,6 +9,7 @@ using Gymware.Models;
 
 namespace Gymware.Controllers
 {
+    [Authorize]
     public class VWItemMaterialController : Controller
     {
         private GimnasioEntities db = new GimnasioEntities();
