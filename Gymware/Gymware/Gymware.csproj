@@ -165,6 +165,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CompraVentaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\EntrenadorController.cs" />
     <Compile Include="Controllers\GimnasioController.cs" />
@@ -529,6 +530,11 @@
     <Content Include="Views\Entrenador\Create.cshtml" />
     <Content Include="Views\Entrenador\Edit.cshtml" />
     <Content Include="Views\Entrenador\Delete.cshtml" />
+    <Content Include="Views\CompraVenta\Index.cshtml" />
+    <Content Include="Views\CompraVenta\Details.cshtml" />
+    <Content Include="Views\CompraVenta\Create.cshtml" />
+    <Content Include="Views\CompraVenta\Edit.cshtml" />
+    <Content Include="Views\CompraVenta\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
