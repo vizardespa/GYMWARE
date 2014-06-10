@@ -4,38 +4,39 @@
     ViewBag.Title = "Delete";
 }
 
+<style type="text/css">
+    .colorLabel {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .colorLabel:hover {
+            text-decoration: underline;
+            background-color: transparent;
+        }
+</style>
+
 <h2>Delete</h2>
 
 <h3>Esta seguro que desea borra la informacion siguiente?</h3>
 <fieldset>
-    <legend>CompraVenta</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IdCompraVenta)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IdCompraVenta)
+    <legend>Compra Venta</legend>
+    <div>
+        <span class="label"></span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.PrecioTotal)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PrecioTotal)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PrecioTotal)
+
+    <div>
+        <span class="label">Fecha de Compra Venta</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.FechaCompraVenta)</a></span>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.FechaCompraVenta)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FechaCompraVenta)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DescuentoPromocion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DescuentoPromocion)
+    <div>
+        <span class="label">Descuento por promoción:</span>
+        <span><a class="colorLabel">@Html.DisplayFor(model => model.DescuentoPromocion)</a></span>
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
