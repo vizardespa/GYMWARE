@@ -1,0 +1,46 @@
+﻿@model Gymware.Models.CompraVenta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Esta seguro que desea borra la informacion siguiente?</h3>
+<fieldset>
+    <legend>CompraVenta</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdCompraVenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdCompraVenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PrecioTotal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrecioTotal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaCompraVenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaCompraVenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescuentoPromocion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescuentoPromocion)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Eliminar" /> |
+        @Html.ActionLink("Volver a la lista", "Index")
+    </p>
+}

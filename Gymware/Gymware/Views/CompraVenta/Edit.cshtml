@@ -1,0 +1,66 @@
+﻿@model Gymware.Models.CompraVenta
+
+@{
+    ViewBag.Title = "Editar Compra-Venta";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CompraVenta</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.IdCompraVenta)
+        </div>*@
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.IdCompraVenta)
+           @* @Html.ValidationMessageFor(model => model.IdCompraVenta)*@
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrecioTotal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrecioTotal)
+            @Html.ValidationMessageFor(model => model.PrecioTotal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaCompraVenta)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaCompraVenta)
+            @Html.ValidationMessageFor(model => model.FechaCompraVenta)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescuentoPromocion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescuentoPromocion)
+            @Html.ValidationMessageFor(model => model.DescuentoPromocion)
+        </div>
+
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Volver a la lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>$(function () {
+    $("#FechaCompraVenta").datepicker({ dateFormat: "yy/mm/dd" });
+});</script>
+
+}
